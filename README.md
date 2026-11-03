@@ -25,6 +25,9 @@ analysis compares 2,094 ordinary trajectories and three cost repetitions.
 
 For data access, model-generation dependencies and the remaining gaps, see
 [Reproduction inputs and current limitations](REPRODUCIBILITY_STATUS.md).
+An [alternative-machine E3 candidate](alibaba_flexible/README.md) provides
+selection, training and evaluation entry points, but it has not been validated
+end to end on the official dataset.
 
 ## Raw data access
 
