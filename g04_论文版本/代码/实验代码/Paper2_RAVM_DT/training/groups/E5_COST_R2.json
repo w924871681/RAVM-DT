@@ -1,0 +1,138 @@
+{
+  "actual_new_scientific_trajectories": false,
+  "architecture": "GRU",
+  "arms": [
+    {
+      "generator": "U_MSE",
+      "id": "JOINT__l3__m0",
+      "method": "JOINT",
+      "threshold": 5.6036475532487204e-05,
+      "weight": 0.3
+    },
+    {
+      "generator": "U_MSE",
+      "id": "RECENT_MEAN__g12",
+      "method": "RECENT_MEAN",
+      "threshold": 0.000420273566493654
+    },
+    {
+      "generator": "U_MSE",
+      "id": "MWU_MEAN__g04",
+      "method": "MWU_MEAN",
+      "threshold": 2.8018237766243602e-05
+    },
+    {
+      "generator": "U_MSE",
+      "id": "DUAL_MEAN__g12",
+      "method": "DUAL_MEAN",
+      "threshold": 0.000420273566493654
+    },
+    {
+      "generator": "U_MSE",
+      "id": "RAVM_ORIGINAL",
+      "method": "RAVM_ORIGINAL",
+      "threshold": 0.0
+    },
+    {
+      "generator": "U_MSE",
+      "id": "RAVM_D2B_V02",
+      "method": "RAVM_D2B_V02",
+      "threshold": 0.0
+    },
+    {
+      "generator": "NATIVE_LEGACY",
+      "id": "ALWAYS_FT",
+      "legacy_native_method": "Always-FT",
+      "method": "ALWAYS_FT",
+      "threshold": 0.0
+    },
+    {
+      "generator": "NATIVE_LEGACY",
+      "id": "ER",
+      "legacy_native_method": "ER",
+      "method": "ER",
+      "threshold": 0.0
+    },
+    {
+      "generator": "NATIVE_LEGACY",
+      "id": "EWC",
+      "legacy_native_method": "EWC",
+      "method": "EWC",
+      "threshold": 0.0
+    },
+    {
+      "generator": "NATIVE_LEGACY",
+      "id": "HUBER_FT",
+      "legacy_native_method": "Huber-FT",
+      "method": "HUBER_FT",
+      "threshold": 0.0
+    },
+    {
+      "generator": "NATIVE_LEGACY",
+      "id": "VALIDATION_COMMIT",
+      "legacy_native_method": "ValidationCommit",
+      "method": "VALIDATION_COMMIT",
+      "threshold": 0.0
+    },
+    {
+      "generator": "NATIVE_LEGACY",
+      "id": "FROZEN",
+      "legacy_native_method": "Frozen",
+      "method": "FROZEN",
+      "threshold": 0.0
+    }
+  ],
+  "centers": [
+    63000
+  ],
+  "cost_only": true,
+  "cost_scope": "deterministic Main input timing replicas; excluded from all scientific sample counts and performance CIs",
+  "cost_timing_serial_ready_graph": true,
+  "domain": "synthetic",
+  "existing_m0": true,
+  "features": 24,
+  "group": "E5_COST_R2",
+  "horizon": 1,
+  "phase": "E5_COST_R2",
+  "physical_cluster": "center",
+  "repetition": 2,
+  "reuse_main_initial": "assets/25e758a0ded66e42b0d6b6f0e5ecb72c8be190852f713fa567368f07886b9d5e.pt",
+  "root": "RESOLVED_AT_RUNTIME",
+  "seeds": [
+    7311
+  ],
+  "source_data": [
+    {
+      "center": 63000,
+      "sha256": "6da8fce1bb946053d139872c634db2539b45ee0ea5013a994abc3a383e2bfac6",
+      "source_path": "assets/6da8fce1bb946053d139872c634db2539b45ee0ea5013a994abc3a383e2bfac6.npz"
+    }
+  ],
+  "sources": {
+    "7311": {
+      "path": "assets/f73b2cad3da6f0ad52933f3b28178398be69826b6d3ca72bf8f00c9634aa3910.pt",
+      "sha256": "f73b2cad3da6f0ad52933f3b28178398be69826b6d3ca72bf8f00c9634aa3910",
+      "state_hash": "2d980d706dce71f1e5f51edf96b8615f097e8a1477d86909b36467c4dcfa50b5"
+    }
+  },
+  "stage": "E5",
+  "stages": 24,
+  "stream_ids": [
+    "clean"
+  ],
+  "stream_specs": {
+    "clean": {
+      "alpha": 0.0,
+      "kind": "clean",
+      "location": "both"
+    }
+  },
+  "input_mapping": {
+    "RUN_MANIFEST.json": "assets/6773987700c58d182579422d8c94d518b1e6dc49efc52e7cfaaa9eb42eb98fa1.json",
+    "EXPERIMENT_LOCK.json": "assets/294b25b57a0c599f0da5b098857e1559b3311fa15bbea86b19d2d5ff78635d06.json",
+    "DEVCAL_SELECTED_LOCK.json": "assets/eb3ff207b5290305c95f0fc28910455e3685d49ed0ee6da3d0e04c122855600c.json",
+    "data/center_63000.npz": "assets/6da8fce1bb946053d139872c634db2539b45ee0ea5013a994abc3a383e2bfac6.npz",
+    "initial/63000_7311.pt": "assets/25e758a0ded66e42b0d6b6f0e5ecb72c8be190852f713fa567368f07886b9d5e.pt",
+    "initial/63000_7311.json": "assets/970e44344a70bc481b3433819ba47473a597aefdd752a395eeb21ab00bdd9af4.json"
+  }
+}

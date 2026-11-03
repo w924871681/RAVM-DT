@@ -1,0 +1,247 @@
+{
+  "rows": [
+    {
+      "domain": "synthetic",
+      "center": 10000,
+      "file": "source_inputs/center_10000.npz",
+      "sha256": "a4eb718dfe663df8230c7bd3bdc06594e0b8e547d0ede8cd0991f2070f38d9b2",
+      "source_file_sha256": "fb1e3e6912c740b14fb72a887ab1168e4fe473b5b6ed57bf7e49a2f41716851a",
+      "slice": [
+        0,
+        1000
+      ],
+      "scope": "Exact existing source-prefix values; no regenerated scientific data"
+    },
+    {
+      "domain": "synthetic",
+      "center": 10001,
+      "file": "source_inputs/center_10001.npz",
+      "sha256": "5dd5807627f0bbc697ebedc92507cdf814694b3294be33f79383bb90a9816195",
+      "source_file_sha256": "1142ed4fcfe877e12a765f4d6f0e35d946f5101e12ab2b7bc92e4856c255c453",
+      "slice": [
+        0,
+        1000
+      ],
+      "scope": "Exact existing source-prefix values; no regenerated scientific data"
+    },
+    {
+      "domain": "synthetic",
+      "center": 10002,
+      "file": "source_inputs/center_10002.npz",
+      "sha256": "0a5c7d1fd47b0ecced423ded0be7e5deaab784078fea748c39c9a3b80caaed4c",
+      "source_file_sha256": "7fd2bf9f3d80a5ca5fcbc6b3b13c5932c822ee240e76daa8fdbf727d764fb97e",
+      "slice": [
+        0,
+        1000
+      ],
+      "scope": "Exact existing source-prefix values; no regenerated scientific data"
+    },
+    {
+      "domain": "synthetic",
+      "center": 10003,
+      "file": "source_inputs/center_10003.npz",
+      "sha256": "13ef17cfed7a6af6ff5d28bafc27f251577ae40bef1c4871623701afe3599660",
+      "source_file_sha256": "5a3803fa4486dccaad0e6a4842dc01efae830055f8f232f557a2d3362d724f72",
+      "slice": [
+        0,
+        1000
+      ],
+      "scope": "Exact existing source-prefix values; no regenerated scientific data"
+    },
+    {
+      "domain": "synthetic",
+      "center": 10004,
+      "file": "source_inputs/center_10004.npz",
+      "sha256": "56074de552c0d67050545ae42551e90523ca81e95a964c432b1f6750f3c5bd45",
+      "source_file_sha256": "d75878aceab3f6c0cccfdc5bdd00fbef37158b23a69638ab57f3c1d62f755f86",
+      "slice": [
+        0,
+        1000
+      ],
+      "scope": "Exact existing source-prefix values; no regenerated scientific data"
+    },
+    {
+      "domain": "synthetic",
+      "center": 10005,
+      "file": "source_inputs/center_10005.npz",
+      "sha256": "12d0c5bbe1a8a3570cce6822af3da9e84f57d62f9ea7f07e66d7b93aa7853523",
+      "source_file_sha256": "37d43df83efb5778d1606cf47f25fadaa00ba5df3f47638923cd023d746068de",
+      "slice": [
+        0,
+        1000
+      ],
+      "scope": "Exact existing source-prefix values; no regenerated scientific data"
+    },
+    {
+      "domain": "synthetic",
+      "center": 10006,
+      "file": "source_inputs/center_10006.npz",
+      "sha256": "5456ea4050abcee539eabdc018b297f243d8a4a7282ac13676179d0aa75c61ce",
+      "source_file_sha256": "63ce548c5157a6256f1ced98964a4335fdbefcaa5ab5e9e5d8e375017137f178",
+      "slice": [
+        0,
+        1000
+      ],
+      "scope": "Exact existing source-prefix values; no regenerated scientific data"
+    },
+    {
+      "domain": "synthetic",
+      "center": 10007,
+      "file": "source_inputs/center_10007.npz",
+      "sha256": "7050a57a0914687fc7d43865ae98d1b27a9c14f9b77629c68dfe727aa972da56",
+      "source_file_sha256": "f289a6fc4181666681131a5480c326641a5fc30add74d43c8959189c4aab435b",
+      "slice": [
+        0,
+        1000
+      ],
+      "scope": "Exact existing source-prefix values; no regenerated scientific data"
+    },
+    {
+      "domain": "synthetic",
+      "center": 10008,
+      "file": "source_inputs/center_10008.npz",
+      "sha256": "850b62ed2de9dca9e34c02e09ffc8b632a0f0009e0b73f5ef4c13230d8be88be",
+      "source_file_sha256": "efa037e504a586b61950a3a4af740521cf53817211c766af3a9d39112ad0d16b",
+      "slice": [
+        0,
+        1000
+      ],
+      "scope": "Exact existing source-prefix values; no regenerated scientific data"
+    },
+    {
+      "domain": "synthetic",
+      "center": 10009,
+      "file": "source_inputs/center_10009.npz",
+      "sha256": "b9a1aa7c6ee241cf3ef133e6f67eec1427760b74797c70524c5a88741680ba75",
+      "source_file_sha256": "fd858630fb0a2a97d2e02c3f5d040d77dc702efa7ef26cab7f66043bf526df32",
+      "slice": [
+        0,
+        1000
+      ],
+      "scope": "Exact existing source-prefix values; no regenerated scientific data"
+    },
+    {
+      "domain": "synthetic",
+      "center": 10010,
+      "file": "source_inputs/center_10010.npz",
+      "sha256": "0ea95efccf8566594424e9c8412dc1270bc1431a10953eff2b2b50f537395ec6",
+      "source_file_sha256": "048e87338d25ea7dc0093201ac1a3d6e46b368b1d1bfcd41aa82414392ecbfb3",
+      "slice": [
+        0,
+        1000
+      ],
+      "scope": "Exact existing source-prefix values; no regenerated scientific data"
+    },
+    {
+      "domain": "synthetic",
+      "center": 10011,
+      "file": "source_inputs/center_10011.npz",
+      "sha256": "0452b5cf10de5719e56efd4d630a9bbfcb1f69f55e9464e7aae2e6bd23b5b8f8",
+      "source_file_sha256": "e476eb5dcb2aa088669f3561166185ce26ac49e916b58a4c0b7578f62fd7d55c",
+      "slice": [
+        0,
+        1000
+      ],
+      "scope": "Exact existing source-prefix values; no regenerated scientific data"
+    },
+    {
+      "domain": "synthetic",
+      "center": 10012,
+      "file": "source_inputs/center_10012.npz",
+      "sha256": "ca444942229853f6edc462488b93168a67c65311f72b51df9ad56cc1c5a824e4",
+      "source_file_sha256": "235eb51032b2f7e3b3b15aea25f79766de2a09d68552209e6142c2ef60be2c24",
+      "slice": [
+        0,
+        1000
+      ],
+      "scope": "Exact existing source-prefix values; no regenerated scientific data"
+    },
+    {
+      "domain": "synthetic",
+      "center": 10013,
+      "file": "source_inputs/center_10013.npz",
+      "sha256": "ed04eace5a93660f3f23cc6bde8693b29dcb094251af76c878e7de4d371ca607",
+      "source_file_sha256": "12bb106eeb39ad086ae6f976733745324ae00e338f7d7921398c8d5d4bd3e0cf",
+      "slice": [
+        0,
+        1000
+      ],
+      "scope": "Exact existing source-prefix values; no regenerated scientific data"
+    },
+    {
+      "domain": "synthetic",
+      "center": 10014,
+      "file": "source_inputs/center_10014.npz",
+      "sha256": "eaed752e4613f8cf8c346ec17360dcc7b19093cfdda77ab5e3952f4438f7b271",
+      "source_file_sha256": "92a49914ee159579c7f2695f38c69b09a2449212eaf3500e426ad7d30c4e96aa",
+      "slice": [
+        0,
+        1000
+      ],
+      "scope": "Exact existing source-prefix values; no regenerated scientific data"
+    },
+    {
+      "domain": "synthetic",
+      "center": 10015,
+      "file": "source_inputs/center_10015.npz",
+      "sha256": "4eb48b28d50d8e8a357bae44f560262e7eb88b4c22f00274623db6eb92bfb6c8",
+      "source_file_sha256": "b220d0d44351e79ba7018a5751e4cd3dc0480a13e9cdc2d5c044305ab2164129",
+      "slice": [
+        0,
+        1000
+      ],
+      "scope": "Exact existing source-prefix values; no regenerated scientific data"
+    },
+    {
+      "domain": "synthetic",
+      "center": 10016,
+      "file": "source_inputs/center_10016.npz",
+      "sha256": "1fc17a3761aca1fb71b6153b10256867bbcb33dd421403ea8d5bed0ed393930c",
+      "source_file_sha256": "1ff02edcddc25d23caec2eba11f6907643a349f15efb6fff99ba25844c32304f",
+      "slice": [
+        0,
+        1000
+      ],
+      "scope": "Exact existing source-prefix values; no regenerated scientific data"
+    },
+    {
+      "domain": "synthetic",
+      "center": 10017,
+      "file": "source_inputs/center_10017.npz",
+      "sha256": "fa1b9fe066435fe8f109640ee573f8fd4e62c1addd65b9407e5e015346e9e645",
+      "source_file_sha256": "6212c8242477a83de9acb69dbb65d29c85f4a6cd37512c9a4f78df54713d49ea",
+      "slice": [
+        0,
+        1000
+      ],
+      "scope": "Exact existing source-prefix values; no regenerated scientific data"
+    },
+    {
+      "domain": "synthetic",
+      "center": 10018,
+      "file": "source_inputs/center_10018.npz",
+      "sha256": "2776393ad5e76718d5d07cc36309aaec31a0a4c7f02415bb6247287c5f1afe49",
+      "source_file_sha256": "ff6227ded6a1b142131efaaa3b62444deb51c54ddaef0ae53c7b3c71d6bd9a73",
+      "slice": [
+        0,
+        1000
+      ],
+      "scope": "Exact existing source-prefix values; no regenerated scientific data"
+    },
+    {
+      "domain": "synthetic",
+      "center": 10019,
+      "file": "source_inputs/center_10019.npz",
+      "sha256": "a6c850c5eb2463eb9d6f389222db3a5bc15278b21fe5f070f19870c70399637a",
+      "source_file_sha256": "cb1a8d29535e7fd7f3be843fc5a7a8e72f3f527e20bda922e45babfe2cef4134",
+      "slice": [
+        0,
+        1000
+      ],
+      "scope": "Exact existing source-prefix values; no regenerated scientific data"
+    }
+  ],
+  "scope": "Synthetic-only release; excludes Alibaba and measured inputs",
+  "full_source_grid_replayed": false,
+  "full_public_end_to_end_validated": false
+}

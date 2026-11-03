@@ -1,0 +1,13 @@
+{
+  "schema": "ravm-dt-v2-final-commit-config-v1",
+  "status": "FINAL_CONFIG_FROZEN",
+  "created_at": "2026-09-11T08:39:44.375089+00:00",
+  "kappa_rec": 0.0,
+  "kappa_hist": 0.5,
+  "delta_imp": 2.8018237766243602e-05,
+  "delta_ret": 0.0,
+  "rho": 0.05,
+  "epsilon": 5.6036475532487204e-05,
+  "selection_source": "V2_1_CALIBRATION_GO",
+  "selection_audit_sha256": "86b667efe0fa2f8ca84fb7f23ed5c6e30d76576107d11efb404fcf822d8a4c4f"
+}

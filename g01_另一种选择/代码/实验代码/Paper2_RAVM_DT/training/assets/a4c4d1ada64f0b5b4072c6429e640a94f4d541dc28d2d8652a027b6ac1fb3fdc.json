@@ -1,0 +1,252 @@
+{
+  "algorithm": {
+    "candidate": "JOINT__l3__m0",
+    "config_source": "DEVCAL_SELECTED_LOCK.json & D3F2R_EXECUTION.lock.json; restore actual numerical values and hashes exactly",
+    "no_retuning": true,
+    "optimizer": "original frozen U_MSE, 50-step SGD per candidate",
+    "primary_stats": "center-cluster paired bootstrap, 4000 draws, seed 20261020; all seeds and stages nested within center",
+    "primary_utility": "center-equally-weighted mean of clean and mixed Service lifecycle MSE",
+    "risk_criterion": {
+      "harm_denominator": "all 24-stage opportunities per stream",
+      "per_stream_downside_max": 5.6036475532487204e-05,
+      "per_stream_harm_max": 0.05
+    }
+  },
+  "amendment": "V2 comparator clarification before new data: best eligible baseline drawn from all 11 comparators in Final, not only the 3 recent gate baselines; Smoke unchanged; see 06.",
+  "baseline_ids_6_core": [
+    "JOINT__l3__m0",
+    "RECENT_MEAN__g12",
+    "MWU_MEAN__g04",
+    "DUAL_MEAN__g12",
+    "RAVM_ORIGINAL",
+    "RAVM_D2B_V02"
+  ],
+  "baseline_rule": "all original-paper baselines must be sourced from scientifically exact original implementation or validated faithful port; no improvised substitutes or baselines omitted silently. Independently calibrated strong gate params restored from prior DevCal, never recalibrated on smoke/final.",
+  "decisions": [
+    "PREFLIGHT_STOP",
+    "SMOKE_GO",
+    "SMOKE_STOP",
+    "SMOKE_INCONCLUSIVE",
+    "FINAL_MAIN_PASS",
+    "FINAL_MAIN_NO_GO",
+    "FINAL_MAIN_INCONCLUSIVE",
+    "FINAL_COVERAGE_COMPLETE",
+    "FINAL_COVERAGE_INCOMPLETE"
+  ],
+  "mandatory_stop": {
+    "max_new_final_batches": 1,
+    "max_new_smoke_batches": 1,
+    "never_access_existing_old_final": true,
+    "never_modify_papers": true,
+    "never_reselect_candidate_params": true,
+    "never_use_service_for_online_gate": true,
+    "no_autoretry_to_get_better_result": true,
+    "no_center_substitution_after_prelock": true,
+    "stop_when_asset_missing": true
+  },
+  "new_final_main": {
+    "centers": [
+      63000,
+      63001,
+      63002,
+      63003,
+      63004,
+      63005,
+      63006,
+      63007,
+      63008,
+      63009,
+      63010,
+      63011,
+      63012,
+      63013,
+      63014,
+      63015,
+      63016,
+      63017,
+      63018,
+      63019,
+      63020,
+      63021,
+      63022,
+      63023,
+      63024,
+      63025,
+      63026,
+      63027,
+      63028,
+      63029,
+      63030,
+      63031
+    ],
+    "first_step": "Identity and asset readiness lock before opening data. Never use original old Final identities.",
+    "if_primary_failure": "FINAL_NO_GO, stop before supplementary and return CMC revision/scientific review",
+    "methods": "baseline_ids_6_core + original_cmc_baselines_6",
+    "model_seeds": [
+      7311,
+      7312,
+      7313
+    ],
+    "primary_comparator_lock": {
+      "active": "at least one actual model commit in clean/mixed; FROZEN may be included in results but is not active",
+      "if_none": "FINAL_MAIN_INCONCLUSIVE",
+      "ineligible_comparators": "retain complete raw MSE, risk, paired CIs and cost, with separate status; no all-baseline raw MSE dominance required",
+      "must_not": "do not silently drop an eligible original CMC comparator; do not pick an ineligible RecentMean by raw MSE as primary",
+      "primary_effect": "Joint vs globally best eligible comparator, relative gain >=0.002, 4000 paired center bootstrap 95% upper delta <0, center wins >=17/32",
+      "risk": "Joint harm per stream<=0.05 and downside per stream<=5.6036475532487204e-05",
+      "scope": "all_11_declared_baselines_3_strong_gates_2_history_6_original_CMC",
+      "selection": "lowest empirical center-equal clean/mixed lifecycle MSE among per-stream-risk-qualified and active baselines on same frozen Final pool",
+      "statistical_limits": "CI vs post-observation selected eligible comparator is not familywise-corrected; report all contrasts and disclose selection"
+    },
+    "primary_success": "Joint active and per-stream empirical harm<=5% and downside<=5.6036475532487204e-5. Among ALL 11 predeclared comparators (RECENT_MEAN__g12, MWU_MEAN__g04, DUAL_MEAN__g12, RAVM_ORIGINAL, RAVM_D2B_V02, ALWAYS_FT, ER, EWC, HUBER_FT, VALIDATION_COMMIT, FROZEN), identify the comparator with smallest clean/mixed center-equal lifecycle MSE among ACTIVE (at least one clean/mixed commit) and per-stream risk-QUALIFIED methods. Against this global strongest eligible comparator require joint relative MSE improvement >=0.2%, center-cluster paired bootstrap (4000 draws; seed 20261020) 95% delta CI upper<0, >=17/32 center wins, and maintenance cost ratio<=2.5. If no eligible active comparator or necessary scientific data missing, INCONCLUSIVE. Risk-unqualified comparators remain in full reporting but are NOT required to have higher raw MSE than Joint. Report all 11 pairwise MSE/risk/cost results and distinction between empirical risk qualification and universal guarantees.",
+    "regime_assignment": "center position mod 4: 8 centers per regime",
+    "risk": "hard per-stream empirical bound 5% + downside 5.6036475532487204e-5; no tolerance",
+    "secondary_report": "ALL_BASELINE_MSE_CI_DOMINANCE flag independent of FINAL_MAIN_PASS; report all 11 pairwise MSE differences and 95% center intervals. For risk-ineligible but high-utility baselines, report paired harm/downside differences, per-stream counts and center intervals; do not call risk difference statistically significant unless supported. Also disclose subgroup variation and 5% empirical-not-theoretical risk nature.",
+    "statistical_unit": "center 32 clusters; complete 4000 cluster bootstrap; publish all 11 baseline contrasts and risk qualification",
+    "streams": [
+      "clean",
+      "mixed",
+      "coherent_sticky"
+    ]
+  },
+  "original_cmc_baselines_6": [
+    "ALWAYS_FT",
+    "ER",
+    "EWC",
+    "HUBER_FT",
+    "VALIDATION_COMMIT",
+    "FROZEN"
+  ],
+  "paper_coverage_after_final_main_pass": {
+    "extended_experiment_budget": "Compute exact upper bound from original code and full condition matrix, freeze before new runs; do not invent fixed count here",
+    "freshness": "Existing externally used Alibaba trace is transfer evidence, not a new untouched blind Final",
+    "independent_additional_optimizer_work": "EWC Fisher etc separately pre-audited; cannot be hidden under 50-step SGD budget",
+    "no_improvised_data": "block and report missing datasets or baseline implementations",
+    "reproduce_not_patch": "Existing original-PDF figures cannot be combined with new Joint final values. Recompute publication figures under consistent protocol or explicitly retire/rewrite affected claims",
+    "required": "Main 5 original conditions after exact mapping; 9 severity combinations; 4 benign regimes; MLP/TCN/GRU × horizons H=1,4; external Alibaba 40-machine trace if original data/code legally and technically available; cost/buffer; enough method description and targeted ablations to avoid contradictory claims",
+    "source": "Original CMC 05_experiments.tex, Figures 3-8"
+  },
+  "progress": {
+    "include": [
+      "stage",
+      "completed trajectories",
+      "completed stage records",
+      "target optimizer steps M0/candidate/extra",
+      "elapsed",
+      "ETA via real throughput",
+      "GPU/RAM/VRAM",
+      "errors"
+    ],
+    "interval_minutes": 15
+  },
+  "protocol_id": "RAVM_D3F2R_SMOKE_TO_NEW_FINAL_20261021_V2_PROPOSED",
+  "regimes": [
+    "stationary",
+    "gradual",
+    "abrupt",
+    "recurring"
+  ],
+  "runtime_author_overrides": {
+    "dashboard_refresh_seconds": 5,
+    "dynamic_workers_all_phases": true,
+    "no_fixed_worker_count_cap": true,
+    "periodic_15_minute_logs": false,
+    "periodic_llm_polling": false,
+    "ram_admission_min_bytes": 2147483648,
+    "resource_and_measured_throughput_ceiling_only": true,
+    "source": "Direct user instruction in current chat, overrides package 15-minute logging"
+  },
+  "scope": "one new smoke and one prospective new final, never old historical Final; do not alter paper",
+  "smoke": {
+    "centers": [
+      62000,
+      62001,
+      62002,
+      62003,
+      62004,
+      62005,
+      62006,
+      62007
+    ],
+    "go_requirements": {
+      "all_core_lifecycles_complete": true,
+      "all_legacy_compatibility_smoke_pass": true,
+      "bootstrap_ci": "reported but not a smoke GO precondition due to 8-center low power",
+      "comparator_scope_note": "Smoke only 3 predeclared calibrated gate comparators are complete; six original CMC baselines are just exactness/compatibility smoke, not primary statistical comparators; Final primary expands to all 11 eligible baselines.",
+      "complete_identity_and_causal_audit": "VALIDATED",
+      "joint_center_wins_against_qualified_primary_at_least": 5,
+      "joint_commits_positive": true,
+      "joint_cost_ratio_to_primary_at_most": 2.5,
+      "joint_downside_each_stream_leq": "original bound",
+      "joint_harm_each_stream_leq_0_05": true,
+      "joint_relative_mse_improvement_over_best_qualified_active_gate_baseline_at_least": 0.005,
+      "strong_gate_risk_qualified_active_comparator_exists": true
+    },
+    "independent_final_centers_never_visited": [
+      63000,
+      63001,
+      63002,
+      63003,
+      63004,
+      63005,
+      63006,
+      63007,
+      63008,
+      63009,
+      63010,
+      63011,
+      63012,
+      63013,
+      63014,
+      63015,
+      63016,
+      63017,
+      63018,
+      63019,
+      63020,
+      63021,
+      63022,
+      63023,
+      63024,
+      63025,
+      63026,
+      63027,
+      63028,
+      63029,
+      63030,
+      63031
+    ],
+    "legacy_compatibility_smoke": {
+      "centers": [
+        62000,
+        62004
+      ],
+      "methods": "original_cmc_baselines_6",
+      "purpose": "engineering parity and causal protocol ONLY, not statistical superiority",
+      "seeds": [
+        7311,
+        7312
+      ],
+      "streams": [
+        "clean",
+        "mixed"
+      ]
+    },
+    "methods": "baseline_ids_6_core",
+    "model_seeds": [
+      7311,
+      7312
+    ],
+    "no_override": "No tolerance above 5% labelled risk-qualified; no retuning, resampling, dropping centers",
+    "non_go": "SMOKE_STOP or SMOKE_INCONCLUSIVE (any incomplete or ambiguous conditions), do not consume Final",
+    "regime_assignment": "center position mod 4: exactly two centers per regime"
+  },
+  "source": "D3f2R STABILITY_PASS new synthetic development centers, not Final",
+  "stages_per_lifecycle": 24,
+  "status": "PROPOSAL_FREEZE_BEFORE_NEW_DATA",
+  "streams": [
+    "clean",
+    "mixed",
+    "coherent_sticky"
+  ]
+}

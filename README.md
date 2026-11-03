@@ -12,12 +12,13 @@ Each version contains Python source code (`代码`), figure PDFs (`图`), and
 author-generated aggregate tables and plotting inputs (`输出结果`). The figure
 scripts generate Figures 3–8 from saved inputs; Figures 1 and 2 are artwork.
 
-This is a **partial release**. Configuration JSON, datasets, model weights and
-checkpoints are not included. Consequently, the original frozen experiment
-runners are not currently runnable end-to-end. The alternative-machine E3
-candidate is supplied separately and has not been validated end to end. The historical experiment
-results and comparisons do not demonstrate that this public snapshot has been
-fully reproduced in a clean environment.
+This is a **partial release**. Synthetic inputs, configurations and source and
+initial checkpoints are supplied for Main, E1, E2 and E5 in both versions;
+see [synthetic subset scope](SYNTHETIC_RELEASE_SCOPE.md). The corresponding new
+manifest covers this subset only. The measured-domain groups and complete
+development-calibration dependencies are not all included. No full clean
+environment or source-to-final execution has been validated for this release.
+The alternative-machine E3 candidate has not been validated end to end.
 
 The historical g04 matrix has 17,118 completed trajectories with scientific
 comparisons. Development calibration used an evidence-supported combination

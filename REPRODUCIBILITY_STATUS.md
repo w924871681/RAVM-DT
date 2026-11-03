@@ -1,6 +1,6 @@
 # Reproduction inputs and current limitations
 
-This repository is a **partial release**. The published historical results can be inspected, but the public files do not yet support end-to-end reproduction. The notes below describe the existing implementation; they are not a claim that the public workflow has passed in a clean environment.
+This repository is a **partial release**. It includes synthetic-group inputs and checkpoints described in [the subset scope](SYNTHETIC_RELEASE_SCOPE.md), but the complete public workflow has not passed in a clean environment. The notes below describe the existing implementation; they do not claim full end-to-end reproduction.
 
 ## Data provided by third parties
 
