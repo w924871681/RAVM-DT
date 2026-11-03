@@ -7182,6 +7182,11 @@
       "sha256": "d0f960ac2f3e9677eb2eb562a9cd0e48d160c94184885edc2432406a727e9e66"
     },
     {
+      "file": "EXTENSION_ATTRIBUTION_AND_LICENSE.md",
+      "bytes": 2558,
+      "sha256": "0856fe82f7acaec4089f707f822c3b48f1c45c5b60c212777ecd3246fd00cba4"
+    },
+    {
       "file": "groups/E1.json",
       "bytes": 22566,
       "sha256": "196d7eab3e5c0cbbd3a71eddea7064df2c7349c6eb7a4c20f8eeed94b4529237"
@@ -7262,6 +7267,11 @@
       "sha256": "8cce28c8001bac831f2788593ded70ceb95ec72f6e717588968ba4a6825beccf"
     },
     {
+      "file": "HISTORICAL_ENVIRONMENT_REPRODUCE.md",
+      "bytes": 1188,
+      "sha256": "8d2c2f96537e09e263cc3173ab5d2314d6b09331856dc1cdd2d3c99b9d974cbf"
+    },
+    {
       "file": "identities/DEVCAL_SELECTED_LOCK.json",
       "bytes": 3740,
       "sha256": "eb3ff207b5290305c95f0fc28910455e3685d49ed0ee6da3d0e04c122855600c"
@@ -7280,6 +7290,11 @@
       "file": "prepare_inputs.py",
       "bytes": 4347,
       "sha256": "c7d217f239a2d56b8d08b965822f8b714af3bd557477fcdf2ebe33c9618600eb"
+    },
+    {
+      "file": "requirements-nontorch.txt",
+      "bytes": 76,
+      "sha256": "6f76997c93c8da72dddfb1806db842ddfd8ee23c30ad7328b8e2f55b1d991c5f"
     },
     {
       "file": "run.py",
@@ -7403,6 +7418,6 @@
     }
   ],
   "groups": 16,
-  "total_bytes": 160623744,
+  "total_bytes": 160627566,
   "scope": "Main, E1, E2, E4 and E5; Alibaba E3 and complete development calibration excluded"
 }

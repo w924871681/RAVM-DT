@@ -35,6 +35,8 @@ An [alternative-machine E3 candidate](alibaba_flexible/README.md) provides
 selection, training and evaluation entry points, but it has not been validated
 end to end on the official dataset.
 
+See [recorded environments and installation](ENVIRONMENT_GUIDE.md) before running.
+
 ## Raw data access
 
 Raw datasets are obtained separately from their respective providers and are
