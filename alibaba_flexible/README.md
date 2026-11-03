@@ -92,3 +92,5 @@ Do not describe a successful command launch, input preparation, mocked test or
 partial run as full reproduction. Complete operation on official data,
 end-to-end scientific validation, summary/figure correspondence and results
 on genuinely unseen machines remain to be established independently.
+
+For step-by-step reader commands and read-only checks, see [READER_WALKTHROUGH.md](READER_WALKTHROUGH.md).
