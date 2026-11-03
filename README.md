@@ -23,6 +23,9 @@ comparisons. Development calibration used an evidence-supported combination
 that reused the historical timing-selection component. The g01 sensitivity
 analysis compares 2,094 ordinary trajectories and three cost repetitions.
 
+For data access, model-generation dependencies and the remaining gaps, see
+[Reproduction inputs and current limitations](REPRODUCIBILITY_STATUS.md).
+
 ## Raw data access
 
 Raw datasets are obtained separately from their respective providers and are
