@@ -1,0 +1,3 @@
+# Historical trajectory references (partial)
+
+The `公共参考/冻结轨迹` directory contains original saved stage-result reference parts for Main, E1, E2, E4 and E5, shared by both manuscript versions. The 21 parts match both versions' historical reference manifests. They are historical results used for comparison; their presence does not mean a fresh run has taken place. E3 Alibaba references are not included. The UCI and ThermBuild data-derived portions are subject to the source attribution and licence conditions in DATA_THIRDPARTY_ATTRIBUTION.md. Do not interpret this subset as a complete end-to-end reproduction.
