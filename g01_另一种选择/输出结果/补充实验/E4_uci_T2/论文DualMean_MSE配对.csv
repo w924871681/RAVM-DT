@@ -1,0 +1,6 @@
+﻿group,stream,baseline,metric,paired_independent_units,delta_joint_minus_baseline,ci_low,ci_high,bootstrap_replicates,bootstrap_seed,uncertainty
+E4_uci_T2,clean,DUAL_MEAN__g12,mse,1,-0.06942934522198305,,,0,,"descriptive task/house result; no population CI, rooms and seeds not independent buildings"
+E4_uci_T2,bias,DUAL_MEAN__g12,mse,1,-0.08418681879993528,,,0,,"descriptive task/house result; no population CI, rooms and seeds not independent buildings"
+E4_uci_T2,dropout,DUAL_MEAN__g12,mse,1,-0.05843560860699251,,,0,,"descriptive task/house result; no population CI, rooms and seeds not independent buildings"
+E4_uci_T2,stale,DUAL_MEAN__g12,mse,1,-0.0713149857151115,,,0,,"descriptive task/house result; no population CI, rooms and seeds not independent buildings"
+E4_uci_T2,EQUAL_CONDITION_MEAN,DUAL_MEAN__g12,mse,1,-0.07084168958600559,,,0,,"descriptive task/house result; no population CI, rooms and seeds not independent buildings"

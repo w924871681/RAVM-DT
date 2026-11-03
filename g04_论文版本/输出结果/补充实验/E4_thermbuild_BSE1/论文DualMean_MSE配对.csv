@@ -1,0 +1,5 @@
+﻿group,stream,baseline,metric,paired_independent_units,delta_joint_minus_baseline,ci_low,ci_high,bootstrap_replicates,bootstrap_seed,uncertainty
+E4_thermbuild_BSE1,unmodified,DUAL_MEAN__g12,mse,1,-0.002952877635834742,,,0,,"descriptive task/house result; no population CI, rooms and seeds not independent buildings"
+E4_thermbuild_BSE1,offset_2C_1h,DUAL_MEAN__g12,mse,1,0.007497280770136658,,,0,,"descriptive task/house result; no population CI, rooms and seeds not independent buildings"
+E4_thermbuild_BSE1,dropout_1h,DUAL_MEAN__g12,mse,1,0.052925942933264504,,,0,,"descriptive task/house result; no population CI, rooms and seeds not independent buildings"
+E4_thermbuild_BSE1,EQUAL_CONDITION_MEAN,DUAL_MEAN__g12,mse,1,0.01915678202252214,,,0,,"descriptive task/house result; no population CI, rooms and seeds not independent buildings"

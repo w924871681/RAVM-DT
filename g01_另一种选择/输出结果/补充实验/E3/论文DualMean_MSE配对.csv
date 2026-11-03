@@ -1,0 +1,4 @@
+﻿group,stream,baseline,metric,paired_independent_units,delta_joint_minus_baseline,ci_low,ci_high,bootstrap_replicates,bootstrap_seed,uncertainty
+E3,clean,DUAL_MEAN__g12,mse,40,1.1108467465387729e-06,-6.866996784336703e-06,9.109489051520726e-06,4000,20261022,unadjusted center/machine paired percentile bootstrap; exploratory across multiple comparisons
+E3,mixed,DUAL_MEAN__g12,mse,40,2.4175658542608518e-05,1.0905181649027544e-05,3.7976700732329696e-05,4000,20261022,unadjusted center/machine paired percentile bootstrap; exploratory across multiple comparisons
+E3,BALANCED_CLEAN_MIXED,DUAL_MEAN__g12,mse,40,1.2643252644573645e-05,3.886903305094194e-06,2.2041349108279673e-05,4000,20261022,unadjusted center/machine paired percentile bootstrap; exploratory across multiple comparisons
