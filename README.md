@@ -13,8 +13,9 @@ author-generated aggregate tables and plotting inputs (`输出结果`). The figu
 scripts generate Figures 3–8 from saved inputs; Figures 1 and 2 are artwork.
 
 This is a **partial release**. Configuration JSON, datasets, model weights and
-checkpoints are not included. Consequently, the experiment runners in this
-repository are not currently runnable end-to-end. The historical experiment
+checkpoints are not included. Consequently, the original frozen experiment
+runners are not currently runnable end-to-end. The alternative-machine E3
+candidate is supplied separately and has not been validated end to end. The historical experiment
 results and comparisons do not demonstrate that this public snapshot has been
 fully reproduced in a clean environment.
 
