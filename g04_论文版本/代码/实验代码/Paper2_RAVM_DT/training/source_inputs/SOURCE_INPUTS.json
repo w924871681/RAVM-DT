@@ -241,7 +241,17 @@
       "scope": "Exact existing source-prefix values; no regenerated scientific data"
     }
   ],
-  "scope": "Synthetic-only release; excludes Alibaba and measured inputs",
+  "scope": "Synthetic sources; UCI and ThermBuild use their E4 group arrays. Alibaba source inputs excluded.",
   "full_source_grid_replayed": false,
-  "full_public_end_to_end_validated": false
+  "full_public_end_to_end_validated": false,
+  "thermal_source_bounds": {
+    "BSE1": [
+      0,
+      11518
+    ],
+    "BSE2": [
+      0,
+      11473
+    ]
+  }
 }

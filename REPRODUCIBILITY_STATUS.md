@@ -1,6 +1,6 @@
 # Reproduction inputs and current limitations
 
-This repository is a **partial release**. It includes synthetic-group inputs and checkpoints described in [the subset scope](SYNTHETIC_RELEASE_SCOPE.md), but the complete public workflow has not passed in a clean environment. The notes below describe the existing implementation; they do not claim full end-to-end reproduction.
+This repository is a **partial release**. It includes synthetic-group and E4 inputs and checkpoints described in [the subset scope](SYNTHETIC_RELEASE_SCOPE.md) and [data attribution](DATA_THIRDPARTY_ATTRIBUTION.md), but the complete public workflow has not passed in a clean environment. The notes below describe the existing implementation; they do not claim full end-to-end reproduction.
 
 ## Data provided by third parties
 
@@ -27,6 +27,6 @@ An [alternative-machine E3 candidate](alibaba_flexible/README.md) is now supplie
 
 The historical records specify a source-fitting environment of Python 3.11.15 and PyTorch 2.5.1+cu121, and a lifecycle environment of Python 3.13.5 and PyTorch 2.13.0+cu126. The existing records describe the original Windows/NVIDIA setup; a complete fresh installation, compatibility on other systems and end-to-end execution of this public subset have not been established. Do not assume that a later run produces bit-identical checkpoints merely from these version numbers.
 
-The original frozen execution code verifies the full asset manifest and stages inputs before source-to-final execution. Consequently, obtaining the raw archives alone is insufficient for that historical runner. The alternative-machine candidate is designed to generate new inputs, weights and run records without the historical mapping; it still requires a validated installation path and end-to-end scientific validation. The other original experiment groups also require their missing configurations and assets. Until these dependencies are addressed, the public repository cannot support a complete independent run or be described as fully reproducible.
+The original frozen execution code verified the original full asset manifest and staged inputs before source-to-final execution. The published manifest has been rebuilt to cover the included synthetic and E4 groups only; it is not that original full manifest. The alternative-machine E3 candidate is designed to generate new inputs, weights and run records without the historical mapping; it still requires a validated installation path and end-to-end scientific validation. Complete development-calibration dependencies are not included. Until these gaps are addressed, the public repository cannot support a complete independent run or be described as fully reproducible.
 
 The paper’s historical g04 results, its historical timing-based choice, and the later g01 sensitivity analysis are distinct; consult the main README before interpreting them. Saved summary tables and plots are not evidence that a reader has rerun the experiments.

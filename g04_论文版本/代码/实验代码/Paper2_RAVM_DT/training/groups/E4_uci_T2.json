@@ -1,0 +1,511 @@
+{
+  "actual_new_scientific_trajectories": true,
+  "architecture": "GRU",
+  "arms": [
+    {
+      "generator": "U_MSE",
+      "id": "JOINT__l3__m0",
+      "method": "JOINT",
+      "threshold": 5.6036475532487204e-05,
+      "weight": 0.3
+    },
+    {
+      "generator": "U_MSE",
+      "id": "RECENT_MEAN__g12",
+      "method": "RECENT_MEAN",
+      "threshold": 0.000420273566493654
+    },
+    {
+      "generator": "U_MSE",
+      "id": "MWU_MEAN__g04",
+      "method": "MWU_MEAN",
+      "threshold": 2.8018237766243602e-05
+    },
+    {
+      "generator": "U_MSE",
+      "id": "DUAL_MEAN__g12",
+      "method": "DUAL_MEAN",
+      "threshold": 0.000420273566493654
+    },
+    {
+      "generator": "U_MSE",
+      "id": "RAVM_ORIGINAL",
+      "method": "RAVM_ORIGINAL",
+      "threshold": 0.0
+    },
+    {
+      "generator": "NATIVE_LEGACY",
+      "id": "ALWAYS_FT",
+      "legacy_native_method": "Always-FT",
+      "method": "ALWAYS_FT",
+      "threshold": 0.0
+    },
+    {
+      "generator": "NATIVE_LEGACY",
+      "id": "FROZEN",
+      "legacy_native_method": "Frozen",
+      "method": "FROZEN",
+      "threshold": 0.0
+    }
+  ],
+  "building": "T2",
+  "building_index": 2,
+  "centers": [
+    10000
+  ],
+  "data_files": [
+    {
+      "path": "raw/uci/energydata_complete.csv",
+      "sha256": "2820bf712ad0275cb18b85a05250926100d8e65ebb9f4d2d016ca91ea152a25d"
+    }
+  ],
+  "domain": "uci",
+  "features": 40,
+  "group": "E4_uci_T2",
+  "horizon": 1,
+  "original_protocol_sha256": "b2053f80e2233029035930cdfc1d0b6117ac651cc97c2b2ed394c60f0b527c67",
+  "phase": "E4_uci_T2",
+  "physical_cluster": "one_home_uci",
+  "raw_stages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24
+  ],
+  "role_bounds": {
+    "initial_history": [
+      9300,
+      9500
+    ],
+    "warmup": [
+      9000,
+      9300
+    ]
+  },
+  "role_schedule": [
+    [
+      [
+        9500,
+        9700
+      ],
+      [
+        9700,
+        9860
+      ],
+      [
+        9860,
+        10060
+      ]
+    ],
+    [
+      [
+        9860,
+        10060
+      ],
+      [
+        10060,
+        10220
+      ],
+      [
+        10220,
+        10420
+      ]
+    ],
+    [
+      [
+        10220,
+        10420
+      ],
+      [
+        10420,
+        10580
+      ],
+      [
+        10580,
+        10780
+      ]
+    ],
+    [
+      [
+        10580,
+        10780
+      ],
+      [
+        10780,
+        10940
+      ],
+      [
+        10940,
+        11140
+      ]
+    ],
+    [
+      [
+        10940,
+        11140
+      ],
+      [
+        11140,
+        11300
+      ],
+      [
+        11300,
+        11500
+      ]
+    ],
+    [
+      [
+        11300,
+        11500
+      ],
+      [
+        11500,
+        11660
+      ],
+      [
+        11660,
+        11860
+      ]
+    ],
+    [
+      [
+        11660,
+        11860
+      ],
+      [
+        11860,
+        12020
+      ],
+      [
+        12020,
+        12220
+      ]
+    ],
+    [
+      [
+        12020,
+        12220
+      ],
+      [
+        12220,
+        12380
+      ],
+      [
+        12380,
+        12580
+      ]
+    ],
+    [
+      [
+        12380,
+        12580
+      ],
+      [
+        12580,
+        12740
+      ],
+      [
+        12740,
+        12940
+      ]
+    ],
+    [
+      [
+        12740,
+        12940
+      ],
+      [
+        12940,
+        13100
+      ],
+      [
+        13100,
+        13300
+      ]
+    ],
+    [
+      [
+        13100,
+        13300
+      ],
+      [
+        13300,
+        13460
+      ],
+      [
+        13460,
+        13660
+      ]
+    ],
+    [
+      [
+        13460,
+        13660
+      ],
+      [
+        13660,
+        13820
+      ],
+      [
+        13820,
+        14020
+      ]
+    ],
+    [
+      [
+        13820,
+        14020
+      ],
+      [
+        14020,
+        14180
+      ],
+      [
+        14180,
+        14380
+      ]
+    ],
+    [
+      [
+        14180,
+        14380
+      ],
+      [
+        14380,
+        14540
+      ],
+      [
+        14540,
+        14740
+      ]
+    ],
+    [
+      [
+        14540,
+        14740
+      ],
+      [
+        14740,
+        14900
+      ],
+      [
+        14900,
+        15100
+      ]
+    ],
+    [
+      [
+        14900,
+        15100
+      ],
+      [
+        15100,
+        15260
+      ],
+      [
+        15260,
+        15460
+      ]
+    ],
+    [
+      [
+        15260,
+        15460
+      ],
+      [
+        15460,
+        15620
+      ],
+      [
+        15620,
+        15820
+      ]
+    ],
+    [
+      [
+        15620,
+        15820
+      ],
+      [
+        15820,
+        15980
+      ],
+      [
+        15980,
+        16180
+      ]
+    ],
+    [
+      [
+        15980,
+        16180
+      ],
+      [
+        16180,
+        16340
+      ],
+      [
+        16340,
+        16540
+      ]
+    ],
+    [
+      [
+        16340,
+        16540
+      ],
+      [
+        16540,
+        16700
+      ],
+      [
+        16700,
+        16900
+      ]
+    ],
+    [
+      [
+        16700,
+        16900
+      ],
+      [
+        16900,
+        17060
+      ],
+      [
+        17060,
+        17260
+      ]
+    ],
+    [
+      [
+        17060,
+        17260
+      ],
+      [
+        17260,
+        17420
+      ],
+      [
+        17420,
+        17620
+      ]
+    ],
+    [
+      [
+        17420,
+        17620
+      ],
+      [
+        17620,
+        17780
+      ],
+      [
+        17780,
+        17980
+      ]
+    ],
+    [
+      [
+        17780,
+        17980
+      ],
+      [
+        17980,
+        18140
+      ],
+      [
+        18140,
+        18340
+      ]
+    ]
+  ],
+  "room_index": 1,
+  "root": "RESOLVED_AT_RUNTIME",
+  "seeds": [
+    7311,
+    7312,
+    7313
+  ],
+  "sources": {
+    "7311": {
+      "path": "assets/87cf95d21f8538b12668ef1a1eabf79e9ba542b401dffbf68251bc83bf607006.pt",
+      "sha256": "87cf95d21f8538b12668ef1a1eabf79e9ba542b401dffbf68251bc83bf607006",
+      "state_hash": "a72a88090cb32fac855b3662d10da9e72fb4918448d0aebca3d46056b9d3e012"
+    },
+    "7312": {
+      "path": "assets/64f882cec0a8ce171764449e992bd09b1189ebd3359bbe71de90d309b682843e.pt",
+      "sha256": "64f882cec0a8ce171764449e992bd09b1189ebd3359bbe71de90d309b682843e",
+      "state_hash": "7941f10c1cd17490139d780e3282fd173cc522aff65a2dd085f10d2bcb3578af"
+    },
+    "7313": {
+      "path": "assets/b4ea2e926cca3d4b9a0c67972682c2a84afcdde744a80be35aece63a30918cf7.pt",
+      "sha256": "b4ea2e926cca3d4b9a0c67972682c2a84afcdde744a80be35aece63a30918cf7",
+      "state_hash": "8ce8440b2e4e9a3bf01180437d25b4de22b09a1c9781f1f81c515354747126ba"
+    }
+  },
+  "stage": "E4",
+  "stages": 24,
+  "stream_ids": [
+    "clean",
+    "bias",
+    "dropout",
+    "stale"
+  ],
+  "stream_specs": {
+    "bias": {
+      "alpha": 0.1,
+      "kind": "bias",
+      "location": "both"
+    },
+    "clean": {
+      "alpha": 0.0,
+      "kind": "clean",
+      "location": "both"
+    },
+    "dropout": {
+      "alpha": 0.1,
+      "kind": "dropout",
+      "location": "both"
+    },
+    "stale": {
+      "alpha": 0.1,
+      "kind": "stale",
+      "location": "both"
+    }
+  },
+  "target_mean": 19.654020309448242,
+  "target_scale": 1.6484100818634033,
+  "input_mapping": {
+    "RUN_MANIFEST.json": "assets/82e375b2281b436a5d0f69568c0dd346dc1c1cc8a0a2ccfd91a12da07552baed.json",
+    "EXPERIMENT_LOCK.json": "assets/294b25b57a0c599f0da5b098857e1559b3311fa15bbea86b19d2d5ff78635d06.json",
+    "DEVCAL_SELECTED_LOCK.json": "assets/eb3ff207b5290305c95f0fc28910455e3685d49ed0ee6da3d0e04c122855600c.json",
+    "data/center_10000.npz": "assets/367b27ade43cd1a2b93abd6700425d5cecbbae538a91c872e85fed2631132b08.npz",
+    "initial/10000_7311.pt": "assets/752e643acc03045f8ec2e814320c5d013117db160dff49fba5f883c7e8efee0b.pt",
+    "initial/10000_7311.json": "assets/e2b8b326efed4cfecd1e3f2ecb40ae7d4c57473ac2a8478b010b694f3ff7fcc2.json",
+    "initial/10000_7312.pt": "assets/0929a0c6a458066cc05421eedb4379ce79944691a807d3c94093be990d111832.pt",
+    "initial/10000_7312.json": "assets/f4123244ab11754bb6a29cb3c4fd68ce490d3bd4e109790f077cbd86dd2a807e.json",
+    "initial/10000_7313.pt": "assets/09a2900dc71fe2d2392ad60f2b6d6d817ae81db922815ea7d24c09cb2f360c83.pt",
+    "initial/10000_7313.json": "assets/58d1edac0f6683dfc60e3704052f6661afb5c203a8284129b2f5d6fcf2be0a80.json"
+  }
+}
