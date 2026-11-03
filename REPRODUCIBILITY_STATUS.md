@@ -21,6 +21,8 @@ A prior local check reconstructed 20 source and 40 target arrays matching regist
 
 The existing source-fitting recipe uses the selected source arrays to fit source models; `historical_alibaba_initial.py` then constructs per-center initial models from a source checkpoint and warm-up data. These scripts require missing configurations, identity records and inputs. Initial-identity metadata alone is not a trained model. Alibaba-derived data and model weights are not redistributed here while their redistribution rights remain unresolved.
 
+An [alternative-machine E3 candidate](alibaba_flexible/README.md) is now supplied. It uses a new selection and locally generated weights rather than the missing historical Alibaba weights. Its interfaces have been checked with synthetic or mocked inputs; it has not been run end to end on the official archive, and no claim of complete reproduction or new-machine generalization has been established.
+
 ## Runtime and acceptance boundary
 
 The historical records specify a source-fitting environment of Python 3.11.15 and PyTorch 2.5.1+cu121, and a lifecycle environment of Python 3.13.5 and PyTorch 2.13.0+cu126. The existing records describe the original Windows/NVIDIA setup; a complete fresh installation, compatibility on other systems and end-to-end execution of this public subset have not been established. Do not assume that a later run produces bit-identical checkpoints merely from these version numbers.
