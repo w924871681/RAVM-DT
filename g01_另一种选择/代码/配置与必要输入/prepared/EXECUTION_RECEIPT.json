@@ -1,0 +1,1 @@
+{"all_17_groups": true, "cache_counters": null, "completed": 0, "elapsed_seconds": 133.80141020000156, "expected": 17118, "full_matrix": false, "source_models_retrained": false, "source_reuse_requested": true, "source_training_scope": "Original full-training receipts preserved; reused models are not retrained in this invocation", "status": "PREPARED_ONLY"}

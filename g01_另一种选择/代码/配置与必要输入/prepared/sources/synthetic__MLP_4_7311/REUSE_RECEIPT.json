@@ -1,0 +1,43 @@
+{
+  "status": "PASS_REUSED_COMPLETED_SOURCE_EXACT_STATE",
+  "recipe": {
+    "domain": "synthetic",
+    "architecture": "MLP",
+    "horizon": 4,
+    "seed": 7311,
+    "task": ""
+  },
+  "state_hash": "bbf47da8b232dfb1cc393b2c2be80ea5ca7ad61a33a4ec3365a559267eb1e629",
+  "donor": "../../../sources/synthetic__MLP_4_7311",
+  "donor_receipt_sha256": "ba75fae0ee80b32a7df86c8bcd510fd1ff3ca6343dd063d310863d4fd29d5ee4",
+  "scientific_asset_manifest_sha256": "e9af60230c72218b895f10f6fb3a5926f78453d3a50dc6785b98eb5c17838e01",
+  "files": [
+    {
+      "file": "checkpoints/source_MLP_H4_7311.json",
+      "bytes": 384,
+      "sha256": "6a96da957581ec9b79fe9735b56ae33e2f5851dc0ad113fcd06d9ef8dc6d69f7"
+    },
+    {
+      "file": "checkpoints/source_MLP_H4_7311.pt",
+      "bytes": 593384,
+      "sha256": "9b874cb2d8d5e628072684cf5cc36f04039610928f383eb5e30143e1c4708d2b"
+    },
+    {
+      "file": "logs/pretrain_progress.json",
+      "bytes": 116,
+      "sha256": "01ac557ef99534fb2c3a3b9d308e9c3e764f4078a2021e266f4e986f94f18379"
+    },
+    {
+      "file": "SOURCE_STATE_COMPARISON.json",
+      "bytes": 176,
+      "sha256": "2af9bf11342872cfc845eac2f52135477e8248009cae1ac074a125aafd37339d"
+    },
+    {
+      "file": "SOURCE_TRAINING_RECEIPT.json",
+      "bytes": 540,
+      "sha256": "ba75fae0ee80b32a7df86c8bcd510fd1ff3ca6343dd063d310863d4fd29d5ee4"
+    }
+  ],
+  "optimizer_executed_this_invocation": false,
+  "original_full_training_receipt_preserved": true
+}

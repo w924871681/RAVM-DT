@@ -1,0 +1,43 @@
+{
+  "status": "PASS_REUSED_COMPLETED_SOURCE_EXACT_STATE",
+  "recipe": {
+    "domain": "synthetic",
+    "architecture": "MLP",
+    "horizon": 1,
+    "seed": 7313,
+    "task": ""
+  },
+  "state_hash": "9a0148e5ddfc5290837da5aa105435461927890eae3fe6efaa611bec4d1099a8",
+  "donor": "../../../sources/synthetic__MLP_1_7313",
+  "donor_receipt_sha256": "d869e1bec01f65214dab2e7ec6e3f448460c7fe35743ddee394b59705ab3c7f3",
+  "scientific_asset_manifest_sha256": "e9af60230c72218b895f10f6fb3a5926f78453d3a50dc6785b98eb5c17838e01",
+  "files": [
+    {
+      "file": "checkpoints/source_MLP_H1_7313.json",
+      "bytes": 385,
+      "sha256": "4be8b06d4ccd1d191739458e2ff7d98f08d951323c9df3b82492030affd2828f"
+    },
+    {
+      "file": "checkpoints/source_MLP_H1_7313.pt",
+      "bytes": 592616,
+      "sha256": "648ee259bc295a4910472167500e6979408f941d0ec7e42e8c67f2899ed5dcc5"
+    },
+    {
+      "file": "logs/pretrain_progress.json",
+      "bytes": 117,
+      "sha256": "2239bed4efb539f983970e5801e095ecf2a9645becd1832bbcbecfc8a6aa667d"
+    },
+    {
+      "file": "SOURCE_STATE_COMPARISON.json",
+      "bytes": 176,
+      "sha256": "f751d74c52781c2c9f7e8625a869e47063556c5f423b16897073d9722548e6f8"
+    },
+    {
+      "file": "SOURCE_TRAINING_RECEIPT.json",
+      "bytes": 540,
+      "sha256": "d869e1bec01f65214dab2e7ec6e3f448460c7fe35743ddee394b59705ab3c7f3"
+    }
+  ],
+  "optimizer_executed_this_invocation": false,
+  "original_full_training_receipt_preserved": true
+}

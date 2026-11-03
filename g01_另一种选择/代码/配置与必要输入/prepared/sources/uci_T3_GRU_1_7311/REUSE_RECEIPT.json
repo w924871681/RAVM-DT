@@ -1,0 +1,33 @@
+{
+  "status": "PASS_REUSED_COMPLETED_SOURCE_EXACT_STATE",
+  "recipe": {
+    "domain": "uci",
+    "architecture": "GRU",
+    "horizon": 1,
+    "seed": 7311,
+    "task": "T3"
+  },
+  "state_hash": "b9ae847601ea4a7480dfafba2a38e5493ef3169537ce379790df90bb250a181b",
+  "donor": "../../../sources/uci_T3_GRU_1_7311",
+  "donor_receipt_sha256": "9f9f870f23f803473ec3b456cd0a67dbefd4afd94501c81ed300c9f08ffa9bae",
+  "scientific_asset_manifest_sha256": "e9af60230c72218b895f10f6fb3a5926f78453d3a50dc6785b98eb5c17838e01",
+  "files": [
+    {
+      "file": "checkpoints/SOURCE_COMPLETE.pt",
+      "bytes": 30668,
+      "sha256": "88639ad551f5aae8e30d24b1f4e6ce499f14b479a505bd6332db2a49d176e336"
+    },
+    {
+      "file": "SOURCE_STATE_COMPARISON.json",
+      "bytes": 176,
+      "sha256": "02edf8acc534069bdbe6f8a79025ab8cebbcd2e512ed3c814b26e851580d2437"
+    },
+    {
+      "file": "SOURCE_TRAINING_RECEIPT.json",
+      "bytes": 534,
+      "sha256": "9f9f870f23f803473ec3b456cd0a67dbefd4afd94501c81ed300c9f08ffa9bae"
+    }
+  ],
+  "optimizer_executed_this_invocation": false,
+  "original_full_training_receipt_preserved": true
+}

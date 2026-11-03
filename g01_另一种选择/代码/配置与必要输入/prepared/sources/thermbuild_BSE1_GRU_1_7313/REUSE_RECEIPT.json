@@ -1,0 +1,33 @@
+{
+  "status": "PASS_REUSED_COMPLETED_SOURCE_EXACT_STATE",
+  "recipe": {
+    "domain": "thermbuild",
+    "architecture": "GRU",
+    "horizon": 1,
+    "seed": 7313,
+    "task": "BSE1"
+  },
+  "state_hash": "188cd642b4bbad045e087687ccc7c8a09caa781885b64c6e5d1886cd7a3683be",
+  "donor": "../../../sources/thermbuild_BSE1_GRU_1_7313",
+  "donor_receipt_sha256": "73f1446327577612a3b22ef3d7f26229d9590f58b4b03c376ce641dacc54b0eb",
+  "scientific_asset_manifest_sha256": "e9af60230c72218b895f10f6fb3a5926f78453d3a50dc6785b98eb5c17838e01",
+  "files": [
+    {
+      "file": "checkpoints/SOURCE_COMPLETE.pt",
+      "bytes": 25292,
+      "sha256": "23493690ec43ddd33ebfd324852221f1d8b6f67a30c3dffc640a744628f04399"
+    },
+    {
+      "file": "SOURCE_STATE_COMPARISON.json",
+      "bytes": 176,
+      "sha256": "7ea9c10e58c01be2ddcab376e740000d794b9d470455ef64700b8e6e604fcd29"
+    },
+    {
+      "file": "SOURCE_TRAINING_RECEIPT.json",
+      "bytes": 530,
+      "sha256": "73f1446327577612a3b22ef3d7f26229d9590f58b4b03c376ce641dacc54b0eb"
+    }
+  ],
+  "optimizer_executed_this_invocation": false,
+  "original_full_training_receipt_preserved": true
+}

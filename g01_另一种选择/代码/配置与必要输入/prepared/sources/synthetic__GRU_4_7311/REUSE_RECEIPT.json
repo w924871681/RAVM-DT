@@ -1,0 +1,43 @@
+{
+  "status": "PASS_REUSED_COMPLETED_SOURCE_EXACT_STATE",
+  "recipe": {
+    "domain": "synthetic",
+    "architecture": "GRU",
+    "horizon": 4,
+    "seed": 7311,
+    "task": ""
+  },
+  "state_hash": "13606f37e408fa1597f117a2741029e5644f46fac8be3c417261eec569c9e194",
+  "donor": "../../../sources/synthetic__GRU_4_7311",
+  "donor_receipt_sha256": "0d9de472631eeab198b44bd34178b19d0e18b2d63e1f733df69cfb5f929327c6",
+  "scientific_asset_manifest_sha256": "e9af60230c72218b895f10f6fb3a5926f78453d3a50dc6785b98eb5c17838e01",
+  "files": [
+    {
+      "file": "checkpoints/source_GRU_H4_7311.json",
+      "bytes": 384,
+      "sha256": "92828601ab0453a943b4a4d7c5daab4d2c47d707251d0894b833f232b0f689ad"
+    },
+    {
+      "file": "checkpoints/source_GRU_H4_7311.pt",
+      "bytes": 24929,
+      "sha256": "cf68e7981c864b3d5a6806ba84ab63d0b8e361674f25b6693b6299f29a0044f4"
+    },
+    {
+      "file": "logs/pretrain_progress.json",
+      "bytes": 117,
+      "sha256": "7590f59212b63905b50ed446eaf4bf89fe5c57b10d00d6a6870fe2cf15f0c125"
+    },
+    {
+      "file": "SOURCE_STATE_COMPARISON.json",
+      "bytes": 176,
+      "sha256": "2ea19bf205c159b96bb7337369220bea9fc11882e09dc6b581fb09309e3b193d"
+    },
+    {
+      "file": "SOURCE_TRAINING_RECEIPT.json",
+      "bytes": 527,
+      "sha256": "0d9de472631eeab198b44bd34178b19d0e18b2d63e1f733df69cfb5f929327c6"
+    }
+  ],
+  "optimizer_executed_this_invocation": false,
+  "original_full_training_receipt_preserved": true
+}

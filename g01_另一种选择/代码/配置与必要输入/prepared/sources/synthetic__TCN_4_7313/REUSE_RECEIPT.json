@@ -1,0 +1,43 @@
+{
+  "status": "PASS_REUSED_COMPLETED_SOURCE_EXACT_STATE",
+  "recipe": {
+    "domain": "synthetic",
+    "architecture": "TCN",
+    "horizon": 4,
+    "seed": 7313,
+    "task": ""
+  },
+  "state_hash": "ac942aa39211cfd545a2b07b190d8c8a2eb7e1c1f0da498095d244e2fffd6ad7",
+  "donor": "../../../sources/synthetic__TCN_4_7313",
+  "donor_receipt_sha256": "c271e9b11bc0ddd4249675f25eeb8d96e9533208b8ae438df35ac209c4e13c25",
+  "scientific_asset_manifest_sha256": "e9af60230c72218b895f10f6fb3a5926f78453d3a50dc6785b98eb5c17838e01",
+  "files": [
+    {
+      "file": "checkpoints/source_TCN_H4_7313.json",
+      "bytes": 384,
+      "sha256": "0b84417be12154acdab508bd7c5ea8def2e2b9ce274822564469d6b898a4c280"
+    },
+    {
+      "file": "checkpoints/source_TCN_H4_7313.pt",
+      "bytes": 25142,
+      "sha256": "a12af5ba05c4d35394367b8ad7c76efbc22f2ec67b05e6083a41abe79bdaecc5"
+    },
+    {
+      "file": "logs/pretrain_progress.json",
+      "bytes": 116,
+      "sha256": "1a55e222cb611bf4ce629f729cecc3a083f519ec215adf9c427fab701b115b2f"
+    },
+    {
+      "file": "SOURCE_STATE_COMPARISON.json",
+      "bytes": 176,
+      "sha256": "2a21aff46917908857f87a5c59b8b747fe813f047679fd5839e79e74bd3c8291"
+    },
+    {
+      "file": "SOURCE_TRAINING_RECEIPT.json",
+      "bytes": 539,
+      "sha256": "c271e9b11bc0ddd4249675f25eeb8d96e9533208b8ae438df35ac209c4e13c25"
+    }
+  ],
+  "optimizer_executed_this_invocation": false,
+  "original_full_training_receipt_preserved": true
+}
