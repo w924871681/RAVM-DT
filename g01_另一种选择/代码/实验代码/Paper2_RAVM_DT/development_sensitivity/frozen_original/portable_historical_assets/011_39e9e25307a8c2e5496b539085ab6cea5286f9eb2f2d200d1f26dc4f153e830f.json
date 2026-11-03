@@ -1,0 +1,110 @@
+{
+  "independent": false,
+  "optimizer_base": {
+    "batch": "min(64,n), replacement sampling",
+    "gradient_clip": 1.0,
+    "learning_rate": 0.01,
+    "loss": "MSE",
+    "optimizer": "SGD",
+    "steps": 50
+  },
+  "policies": [
+    {
+      "fallback": false,
+      "id": "RAVM_LEGACY",
+      "learning_rate": 0.01,
+      "method": "RAVM",
+      "retention_scale": 0.0,
+      "retention_threshold": 0.0,
+      "scale": 0.0,
+      "stage4r_variant": "LEGACY",
+      "threshold": 0.0
+    },
+    {
+      "fallback": false,
+      "id": "DUAL_LEGACY",
+      "learning_rate": 0.01,
+      "method": "DualMean",
+      "retention_scale": 0.0,
+      "retention_threshold": 0.0,
+      "scale": 0.0,
+      "stage4r_variant": "LEGACY",
+      "threshold": 0.0001681094265974
+    },
+    {
+      "fallback": false,
+      "id": "RAVM_CAP_ONLY",
+      "learning_rate": 0.01,
+      "method": "RAVM",
+      "retention_scale": 0.0,
+      "retention_threshold": 0.0,
+      "scale": 0.0,
+      "stage4r_variant": "CAP_ONLY",
+      "threshold": 0.0
+    },
+    {
+      "fallback": false,
+      "id": "DUAL_CAP_ONLY",
+      "learning_rate": 0.01,
+      "method": "DualMean",
+      "retention_scale": 0.0,
+      "retention_threshold": 0.0,
+      "scale": 0.0,
+      "stage4r_variant": "CAP_ONLY",
+      "threshold": 0.0001681094265974
+    },
+    {
+      "fallback": false,
+      "id": "RAVM_TCBO",
+      "learning_rate": 0.01,
+      "method": "RAVM",
+      "retention_scale": 0.0,
+      "retention_threshold": 0.0,
+      "scale": 0.0,
+      "stage4r_variant": "TEMPORAL_GUARD",
+      "threshold": 0.0
+    },
+    {
+      "fallback": false,
+      "id": "DUAL_TCBO",
+      "learning_rate": 0.01,
+      "method": "DualMean",
+      "retention_scale": 0.0,
+      "retention_threshold": 0.0,
+      "scale": 0.0,
+      "stage4r_variant": "TEMPORAL_GUARD",
+      "threshold": 0.0001681094265974
+    },
+    {
+      "fallback": false,
+      "id": "AlwaysFT",
+      "learning_rate": 0.01,
+      "method": "AlwaysFT",
+      "retention_scale": 0.0,
+      "retention_threshold": 0.0,
+      "scale": 0.0,
+      "threshold": 0.0
+    },
+    {
+      "fallback": false,
+      "id": "Frozen",
+      "learning_rate": 0.01,
+      "method": "Frozen",
+      "retention_scale": 0.0,
+      "retention_threshold": 0.0,
+      "scale": 0.0,
+      "threshold": 0.0
+    }
+  ],
+  "run_key": "stage4r_fixed_43002_7311_mixed_ab41e182d166b21b",
+  "score_version": "audited-gate_graph-arithmetic-v1-krec0-khist0.5-bounded12",
+  "stage4r_lock_sha256": "ab41e182d166b21b1b1b4bf0d7687c13c75e940e362b60c613cf71d57b44a425",
+  "stages": 24,
+  "task_identity": {
+    "center_id": 43002,
+    "input_file_sha256": "a9ea5cae28700c5ffb6e5f3682e150583ca965b7b81c9486f92bd087756c7290",
+    "model_seed": 7311,
+    "stream": "mixed",
+    "task_type": "workload"
+  }
+}

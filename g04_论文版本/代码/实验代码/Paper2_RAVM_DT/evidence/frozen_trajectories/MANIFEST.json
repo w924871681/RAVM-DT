@@ -1,0 +1,425 @@
+{
+  "status": "PASS_FROZEN_RESULT_COLLECTION",
+  "groups": [
+    {
+      "group": "E1",
+      "original_result_bytes": 356673767,
+      "trajectories": 5184,
+      "stages": 124416,
+      "portable_projection": {
+        "original_gzip_sha256": "819b70f35270113fb69b1d7ef926c33a7b3dab8d3b06362217ca4720a392fe8e",
+        "removed_fields": [
+          "storage_path"
+        ],
+        "scientific_fields_changed": false
+      },
+      "previous_portable_gzip_sha256": "5b0c181a76b87095ffde0110be6c6ab316b5f23f04ec53fcef88828fff2778aa",
+      "parts": [
+        {
+          "file": "../../../../公共参考/冻结轨迹/E1/part_001.jsonl",
+          "sha256": "cafa359fca241a0141d8fb2e434902d9a0e56a3f3d82fa6102370244c122a615",
+          "bytes": 83873439,
+          "trajectories": 1335
+        },
+        {
+          "file": "../../../../公共参考/冻结轨迹/E1/part_002.jsonl",
+          "sha256": "7a40e104ad3c54755f5771a8bdfccd24fa549151f4edddaddbb5cb708dd59e17",
+          "bytes": 83858482,
+          "trajectories": 1335
+        },
+        {
+          "file": "../../../../公共参考/冻结轨迹/E1/part_003.jsonl",
+          "sha256": "b5557e8d5bb31772b8fb9acab1460ea0336a83ca3aeb2ba3862dd68715e440e8",
+          "bytes": 83860896,
+          "trajectories": 1335
+        },
+        {
+          "file": "../../../../公共参考/冻结轨迹/E1/part_004.jsonl",
+          "sha256": "8b4d387a4e6607f67fcb4213b9c97667dda41a5259abca01ae61809a87919428",
+          "bytes": 74148886,
+          "trajectories": 1179
+        }
+      ]
+    },
+    {
+      "group": "E2_GRU_H1",
+      "original_result_bytes": 52736032,
+      "trajectories": 864,
+      "stages": 20736,
+      "portable_projection": {
+        "original_gzip_sha256": "ca88f6196f04a5d2a30dd70300e32fc7b2fd092b4603f63f4020ce2fbb6e22d9",
+        "removed_fields": [
+          "storage_path"
+        ],
+        "scientific_fields_changed": false
+      },
+      "previous_portable_gzip_sha256": "a9aae50c520ae234509099029804de4693b4bc8a35f0ab6e92d1c10ad9bfa156",
+      "parts": [
+        {
+          "file": "../../../../公共参考/冻结轨迹/E2_GRU_H1/part_001.jsonl",
+          "sha256": "0fa8b727fb2ba6956a8000f30e3556688e2992cf26bfce578f4adf402c30ad49",
+          "bytes": 47020672,
+          "trajectories": 864
+        }
+      ]
+    },
+    {
+      "group": "E2_GRU_H4",
+      "original_result_bytes": 52742505,
+      "trajectories": 864,
+      "stages": 20736,
+      "portable_projection": {
+        "original_gzip_sha256": "aa57685a7b3393aa9b083468787f0320544caf9b7ebbec95f633d7a89e1bcbf7",
+        "removed_fields": [
+          "storage_path"
+        ],
+        "scientific_fields_changed": false
+      },
+      "previous_portable_gzip_sha256": "dfeeccf772170c276f0b7170ebb49be030749e915905f18787adb63ea9934c90",
+      "parts": [
+        {
+          "file": "../../../../公共参考/冻结轨迹/E2_GRU_H4/part_001.jsonl",
+          "sha256": "8606b717796c8700648e518238deb9d6e36cf24f7afb71878d276266019e7185",
+          "bytes": 47027145,
+          "trajectories": 864
+        }
+      ]
+    },
+    {
+      "group": "E2_MLP_H1",
+      "original_result_bytes": 52663077,
+      "trajectories": 864,
+      "stages": 20736,
+      "portable_projection": {
+        "original_gzip_sha256": "fa08db95908f89764c49b3fbdcd5096e9226860846acfe438d4f87ceadd1bdcd",
+        "removed_fields": [
+          "storage_path"
+        ],
+        "scientific_fields_changed": false
+      },
+      "previous_portable_gzip_sha256": "23c6f033660828285a9e83a276924bcf7ee73822eb8a653d8ceda62cbb062780",
+      "parts": [
+        {
+          "file": "../../../../公共参考/冻结轨迹/E2_MLP_H1/part_001.jsonl",
+          "sha256": "062995eb582d9ea3cd60e207c9f86861d65f743d44da24536e2eaa8a935da920",
+          "bytes": 47098373,
+          "trajectories": 864
+        }
+      ]
+    },
+    {
+      "group": "E2_MLP_H4",
+      "original_result_bytes": 52805660,
+      "trajectories": 864,
+      "stages": 20736,
+      "portable_projection": {
+        "original_gzip_sha256": "cf495aeed58fe4f42ff7b6d4713c24226646e5a79158969edd68e73922ae6df2",
+        "removed_fields": [
+          "storage_path"
+        ],
+        "scientific_fields_changed": false
+      },
+      "previous_portable_gzip_sha256": "f9c8ae77a007ca3efff0254dcac12c9007e4867cfb9133cf48191c038eb95642",
+      "parts": [
+        {
+          "file": "../../../../公共参考/冻结轨迹/E2_MLP_H4/part_001.jsonl",
+          "sha256": "7692215078ad7e87c07b1797c722ddc37956644fa227ea4db097e0c42f474377",
+          "bytes": 47090300,
+          "trajectories": 864
+        }
+      ]
+    },
+    {
+      "group": "E2_TCN_H1",
+      "original_result_bytes": 52714007,
+      "trajectories": 864,
+      "stages": 20736,
+      "portable_projection": {
+        "original_gzip_sha256": "9553f47682ddb4e2e1cb3d349681ecd9ecd578382df41fbae490ae7f9aadc445",
+        "removed_fields": [
+          "storage_path"
+        ],
+        "scientific_fields_changed": false
+      },
+      "previous_portable_gzip_sha256": "832a7ac3f262da0a240691c5560f67b07ce2669c9c048e5d6a04b805aa9768a8",
+      "parts": [
+        {
+          "file": "../../../../公共参考/冻结轨迹/E2_TCN_H1/part_001.jsonl",
+          "sha256": "d401675f4a19e1c3dacc8afed6c8c5ddb0521f5e38d381df252a4780d04a4a68",
+          "bytes": 46998647,
+          "trajectories": 864
+        }
+      ]
+    },
+    {
+      "group": "E2_TCN_H4",
+      "original_result_bytes": 52719062,
+      "trajectories": 864,
+      "stages": 20736,
+      "portable_projection": {
+        "original_gzip_sha256": "6d9f0fb6a7d3b588c3d0c6a83c9dc0d24f833cddfbe9ea7810230eb817850baa",
+        "removed_fields": [
+          "storage_path"
+        ],
+        "scientific_fields_changed": false
+      },
+      "previous_portable_gzip_sha256": "5178e4bcd17b481f39c91fb1f3d5b44acd3d16373d9dcce592a6fb03332cf003",
+      "parts": [
+        {
+          "file": "../../../../公共参考/冻结轨迹/E2_TCN_H4/part_001.jsonl",
+          "sha256": "0e7ec4c99bae7a5e87383ae92d44374c04b7d90d3d392ecdbb2ad8d7c6816fa5",
+          "bytes": 47003702,
+          "trajectories": 864
+        }
+      ]
+    },
+    {
+      "group": "E3",
+      "original_result_bytes": 213113340,
+      "trajectories": 2880,
+      "stages": 69120,
+      "portable_projection": {
+        "original_gzip_sha256": "329c3036b9584994bfc824f50e69efee999074d47b388067de76b78ca224d4a5",
+        "removed_fields": [
+          "storage_path"
+        ],
+        "scientific_fields_changed": false
+      },
+      "previous_portable_gzip_sha256": "aae17a127d4acc50427aac22d3d77dc9a28c06c59d51c8b6a2855bdae439ca69",
+      "parts": [
+        {
+          "file": "../../../../公共参考/冻结轨迹/E3/part_001.jsonl",
+          "sha256": "74d2f33e2f1c7a02d99eb648df7d873fefce3bfa29a63f83d6e1083d0e522a6c",
+          "bytes": 83800022,
+          "trajectories": 1233
+        },
+        {
+          "file": "../../../../公共参考/冻结轨迹/E3/part_002.jsonl",
+          "sha256": "93928ad555dce35a5c752f16d333f78f9f53265bd6596b5c74d65c5cf38926e1",
+          "bytes": 83823053,
+          "trajectories": 1233
+        },
+        {
+          "file": "../../../../公共参考/冻结轨迹/E3/part_003.jsonl",
+          "sha256": "73e39130b4e062162ebf91d6137d569f02917fd7c130df100bde35c6b5df5cca",
+          "bytes": 28277945,
+          "trajectories": 414
+        }
+      ]
+    },
+    {
+      "group": "E4_thermbuild_BSE1",
+      "original_result_bytes": 6945085,
+      "trajectories": 63,
+      "stages": 2520,
+      "portable_projection": {
+        "original_gzip_sha256": "2044801987a30b5ed363a8e54fa0bb1deed01732a759270daf2489579c211158",
+        "removed_fields": [
+          "storage_path"
+        ],
+        "scientific_fields_changed": false
+      },
+      "previous_portable_gzip_sha256": "3378bc180ab738deae9ac58d0ba9100f4a62af24c0ee41e7e3729830b4a90780",
+      "parts": [
+        {
+          "file": "../../../../公共参考/冻结轨迹/E4_thermbuild_BSE1/part_001.jsonl",
+          "sha256": "7a3ca036240103e5c11eebd58e32178b106e96b8fe510c0da4d62ff82e8f7862",
+          "bytes": 6240913,
+          "trajectories": 63
+        }
+      ]
+    },
+    {
+      "group": "E4_thermbuild_BSE2",
+      "original_result_bytes": 6597006,
+      "trajectories": 63,
+      "stages": 2394,
+      "portable_projection": {
+        "original_gzip_sha256": "6421414e9d5b424f23899f5c02d19671ac8ae05fc7dc0e04bd6b50e5cd65d72e",
+        "removed_fields": [
+          "storage_path"
+        ],
+        "scientific_fields_changed": false
+      },
+      "previous_portable_gzip_sha256": "1bcab247acc4f7bad055911e5ce2cc64a66464dc7697e5102a557fdce4b8f013",
+      "parts": [
+        {
+          "file": "../../../../公共参考/冻结轨迹/E4_thermbuild_BSE2/part_001.jsonl",
+          "sha256": "fd6945b4d3e47ab75987abe462f7f7815c600ed50777e842c3f80b11b7e088ff",
+          "bytes": 5928870,
+          "trajectories": 63
+        }
+      ]
+    },
+    {
+      "group": "E4_uci_T1",
+      "original_result_bytes": 5501622,
+      "trajectories": 84,
+      "stages": 2016,
+      "portable_projection": {
+        "original_gzip_sha256": "9553333148453b2973a71f77c77a357af35a265a339e1dc06739c3bb0c9244f9",
+        "removed_fields": [
+          "storage_path"
+        ],
+        "scientific_fields_changed": false
+      },
+      "previous_portable_gzip_sha256": "71922fc2628861fe0e9ea25725feec0b1e75fd6b2be20b9e3a88e0733e187e72",
+      "parts": [
+        {
+          "file": "../../../../公共参考/冻结轨迹/E4_uci_T1/part_001.jsonl",
+          "sha256": "c33c3b8abee4264a53bd26e382844fa2fdb0ce36beb31654a987455e6a58ba3e",
+          "bytes": 4945815,
+          "trajectories": 84
+        }
+      ]
+    },
+    {
+      "group": "E4_uci_T2",
+      "original_result_bytes": 5498706,
+      "trajectories": 84,
+      "stages": 2016,
+      "portable_projection": {
+        "original_gzip_sha256": "f452cc02cb5d12feb7a4fbf85359d5acdba41c6bbc133bab0df2c0bc5cac611c",
+        "removed_fields": [
+          "storage_path"
+        ],
+        "scientific_fields_changed": false
+      },
+      "previous_portable_gzip_sha256": "91f1663e54494a5ceca8078709ea60ccfe11999516657ce303622d922a4386fe",
+      "parts": [
+        {
+          "file": "../../../../公共参考/冻结轨迹/E4_uci_T2/part_001.jsonl",
+          "sha256": "1ed0cb76862c452da7a1acafa8264ed4be0fd2ad063479711dc5cdf0ff8770d4",
+          "bytes": 4942983,
+          "trajectories": 84
+        }
+      ]
+    },
+    {
+      "group": "E4_uci_T3",
+      "original_result_bytes": 5499878,
+      "trajectories": 84,
+      "stages": 2016,
+      "portable_projection": {
+        "original_gzip_sha256": "b7aa2d329e4621bd3b11b5544a21d368acce79cef9953f4d6a8d83911afc813e",
+        "removed_fields": [
+          "storage_path"
+        ],
+        "scientific_fields_changed": false
+      },
+      "previous_portable_gzip_sha256": "4260b18edd5bbe01052e018b33e75402c2d5753a0cc2d05a8f78387e055bbe81",
+      "parts": [
+        {
+          "file": "../../../../公共参考/冻结轨迹/E4_uci_T3/part_001.jsonl",
+          "sha256": "60b4f739693e831e234efdb8de4822c4c83aca3e244ddc54cf71d60c125acd75",
+          "bytes": 4944155,
+          "trajectories": 84
+        }
+      ]
+    },
+    {
+      "group": "E5_COST_R1",
+      "original_result_bytes": 894338,
+      "trajectories": 12,
+      "stages": 288,
+      "portable_projection": {
+        "original_gzip_sha256": "6eabef63e917b00328611f568967f6e62edde1f7fbed13f4cab82c1db363c07c",
+        "removed_fields": [
+          "storage_path"
+        ],
+        "scientific_fields_changed": false
+      },
+      "previous_portable_gzip_sha256": "637955e3c4f207750a6beff020db113eefb7d7ae2a7e6f67ba203da10bdb988e",
+      "parts": [
+        {
+          "file": "../../../../公共参考/冻结轨迹/E5_COST_R1/part_001.jsonl",
+          "sha256": "6de00e0b23db8425e0bb5ea27780465e91223402ae232ec178e12c3be3693007",
+          "bytes": 814940,
+          "trajectories": 12
+        }
+      ]
+    },
+    {
+      "group": "E5_COST_R2",
+      "original_result_bytes": 894367,
+      "trajectories": 12,
+      "stages": 288,
+      "portable_projection": {
+        "original_gzip_sha256": "88e89fb26d67ab58e2a1b9a0c858e7380463b5ad8705f5bbd1c86eed4eb8b6e9",
+        "removed_fields": [
+          "storage_path"
+        ],
+        "scientific_fields_changed": false
+      },
+      "previous_portable_gzip_sha256": "18e5ce22a40b7fb05f880a9c40ac7cb9f8d8d57d53c81e1a039e7acd7a72d069",
+      "parts": [
+        {
+          "file": "../../../../公共参考/冻结轨迹/E5_COST_R2/part_001.jsonl",
+          "sha256": "b203a2c2a959e84167a33fc0f7c934696ddcccd7b84e434de9cae61b5a6591da",
+          "bytes": 814969,
+          "trajectories": 12
+        }
+      ]
+    },
+    {
+      "group": "E5_COST_R3",
+      "original_result_bytes": 894363,
+      "trajectories": 12,
+      "stages": 288,
+      "portable_projection": {
+        "original_gzip_sha256": "c46ccfcd4dcee1aa3f36536c5b99a1b9c6a37dd99626eb7239eacd77c554c653",
+        "removed_fields": [
+          "storage_path"
+        ],
+        "scientific_fields_changed": false
+      },
+      "previous_portable_gzip_sha256": "64576c310ffffd9fe30cabb3c18c99758793ecdb2a5bca14945ffa6e90be1585",
+      "parts": [
+        {
+          "file": "../../../../公共参考/冻结轨迹/E5_COST_R3/part_001.jsonl",
+          "sha256": "c1d6f06aa9484a1684562fefd62d2960b56c68ad03acc311c87aecd881c7387d",
+          "bytes": 814965,
+          "trajectories": 12
+        }
+      ]
+    },
+    {
+      "group": "Main",
+      "original_result_bytes": 220163916,
+      "trajectories": 3456,
+      "stages": 82944,
+      "portable_projection": {
+        "original_gzip_sha256": "df605175ed1a20f812871115af9cf7d368a3dc20e0e6f2dd1c4106eff2657ca6",
+        "removed_fields": [
+          "storage_path"
+        ],
+        "scientific_fields_changed": false
+      },
+      "previous_portable_gzip_sha256": "cf0e7221856a4d31847988e563e910e809c57e2ccf83760dc7aa0136c64956c3",
+      "parts": [
+        {
+          "file": "../../../../公共参考/冻结轨迹/Main/part_001.jsonl",
+          "sha256": "8df751b45931af2a254832ddba21bf39c941082755242173db5f3397ab7158b6",
+          "bytes": 83824129,
+          "trajectories": 1242
+        },
+        {
+          "file": "../../../../公共参考/冻结轨迹/Main/part_002.jsonl",
+          "sha256": "51308ffcc75b1d42764144b8b766efafe1fe9e70272ed01968447c631b36d505",
+          "bytes": 83802434,
+          "trajectories": 1239
+        },
+        {
+          "file": "../../../../公共参考/冻结轨迹/Main/part_003.jsonl",
+          "sha256": "01faf7135ba7039a4efcaac7ec84599eca154f1eb600ccb368223b1c56293a5b",
+          "bytes": 65990985,
+          "trajectories": 975
+        }
+      ]
+    }
+  ],
+  "trajectories": 17118,
+  "stages": 412722,
+  "elapsed_seconds": 6613.0804223999985,
+  "source_files_deleted": false
+}

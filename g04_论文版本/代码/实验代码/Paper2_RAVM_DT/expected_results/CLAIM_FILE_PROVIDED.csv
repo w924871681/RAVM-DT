@@ -1,0 +1,8 @@
+material,provided_in_06,scope_or_location
+aggregate CSVs/scripts,YES,05_Scientific_Traceability/data;08_Reproduction
+synthetic source/M0 and processed inputs,YES,training_bundle five frozen synthetic groups
+synthetic source prefixes,YES,training_bundle/source_inputs20 exact prefixes
+Alibaba/UCI/ThermBuild training arrays/checkpoints,NO,Provider acquisition/recipe descriptions; original assets local-only
+all original private receipts/failure history,NO,03_LOCAL_ARCHIVE_NOT_FOR_SUBMISSION
+four editable manuscript projects,SEPARATE,05_LaTeX_Source.zip
+public AHU/QUANT descriptive subsets,YES,08_Reproduction/public_field;field_quant

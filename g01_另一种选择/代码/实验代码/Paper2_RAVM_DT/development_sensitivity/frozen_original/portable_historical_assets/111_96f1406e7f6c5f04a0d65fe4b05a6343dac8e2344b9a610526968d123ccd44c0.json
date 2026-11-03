@@ -1,0 +1,62 @@
+{
+  "independent": false,
+  "optimizer_base": {
+    "batch": "min(64,n), replacement sampling",
+    "gradient_clip": 1.0,
+    "learning_rate": 0.01,
+    "loss": "MSE",
+    "optimizer": "SGD",
+    "steps": 50
+  },
+  "policies": [
+    {
+      "fallback": false,
+      "id": "frozen",
+      "learning_rate": 0.01,
+      "method": "Frozen",
+      "retention_scale": 0.0,
+      "retention_threshold": 0.0,
+      "scale": 0.0,
+      "threshold": 0.0
+    },
+    {
+      "fallback": false,
+      "id": "always",
+      "learning_rate": 0.01,
+      "method": "AlwaysFT",
+      "retention_scale": 0.0,
+      "retention_threshold": 0.0,
+      "scale": 0.0,
+      "threshold": 0.0
+    },
+    {
+      "fallback": false,
+      "id": "ravm_zero",
+      "learning_rate": 0.01,
+      "method": "RAVM",
+      "retention_scale": 0.0,
+      "retention_threshold": 0.0,
+      "scale": 0.0,
+      "threshold": 0.0
+    },
+    {
+      "fallback": false,
+      "id": "recent",
+      "learning_rate": 0.01,
+      "method": "RecentMean",
+      "retention_scale": 0.0,
+      "retention_threshold": 0.0,
+      "scale": 0.0,
+      "threshold": 0.0
+    }
+  ],
+  "run_key": "hash_cache_one_stage_fixture",
+  "score_version": "audited-gate_graph-arithmetic-v1-krec0-khist0.5-bounded12",
+  "stages": 1,
+  "task_identity": {
+    "center_id": "SYNTHETIC_HASH_REGRESSION",
+    "model_seed": 7311,
+    "stream": "synthetic_clean",
+    "task_type": "workload"
+  }
+}

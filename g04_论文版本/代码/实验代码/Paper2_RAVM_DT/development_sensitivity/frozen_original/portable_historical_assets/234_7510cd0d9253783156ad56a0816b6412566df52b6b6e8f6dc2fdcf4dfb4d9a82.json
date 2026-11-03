@@ -1,0 +1,119 @@
+{
+  "created_utc": "2026-10-16T15:45:37.028798+00:00",
+  "streams": [
+    "clean",
+    "mixed",
+    "coherent_sticky"
+  ],
+  "alpha_nominal": 0.1,
+  "attack_seed": 9417,
+  "clean": {
+    "attack": "none"
+  },
+  "mixed": {
+    "implementation": "unmodified core/protocol.py:attack",
+    "code_sha256": "ba7d2208fbcd58b1e4b3ff5929de992b5f71aaa0f389c19a0f9915ce59347bc7",
+    "kinds": [
+      "random",
+      "persistent_bias",
+      "burst",
+      "replay"
+    ],
+    "location": "both",
+    "block_caps": 10,
+    "note": "nominal 0.10 cap; actual fraction may be lower by floor per block"
+  },
+  "coherent_sticky": {
+    "implementation": "code/b1_data.py:coherent_sticky_attack",
+    "code_sha256": "5f4ddb81aa76a2f3535030ce1047f0e3f1429d4dc44aa5e87f00855609fb46a7",
+    "centers": [
+      {
+        "center_id": 46000,
+        "channel": 10,
+        "direction": 1,
+        "magnitude_normalized": 0.2,
+        "alpha_nominal": 0.1,
+        "stages_inclusive": [
+          1,
+          24
+        ],
+        "mask_seed": 9417,
+        "roles": [
+          "update",
+          "verification"
+        ],
+        "positions_per_segment": "floor(alpha*n) uniform without replacement; independent center/stage/role seed",
+        "target": "observed y and one metric x channel; observation mask channels untouched"
+      },
+      {
+        "center_id": 46001,
+        "channel": 2,
+        "direction": -1,
+        "magnitude_normalized": 0.2,
+        "alpha_nominal": 0.1,
+        "stages_inclusive": [
+          1,
+          24
+        ],
+        "mask_seed": 9417,
+        "roles": [
+          "update",
+          "verification"
+        ],
+        "positions_per_segment": "floor(alpha*n) uniform without replacement; independent center/stage/role seed",
+        "target": "observed y and one metric x channel; observation mask channels untouched"
+      },
+      {
+        "center_id": 46002,
+        "channel": 1,
+        "direction": -1,
+        "magnitude_normalized": 0.2,
+        "alpha_nominal": 0.1,
+        "stages_inclusive": [
+          1,
+          24
+        ],
+        "mask_seed": 9417,
+        "roles": [
+          "update",
+          "verification"
+        ],
+        "positions_per_segment": "floor(alpha*n) uniform without replacement; independent center/stage/role seed",
+        "target": "observed y and one metric x channel; observation mask channels untouched"
+      },
+      {
+        "center_id": 46003,
+        "channel": 10,
+        "direction": 1,
+        "magnitude_normalized": 0.2,
+        "alpha_nominal": 0.1,
+        "stages_inclusive": [
+          1,
+          24
+        ],
+        "mask_seed": 9417,
+        "roles": [
+          "update",
+          "verification"
+        ],
+        "positions_per_segment": "floor(alpha*n) uniform without replacement; independent center/stage/role seed",
+        "target": "observed y and one metric x channel; observation mask channels untouched"
+      }
+    ],
+    "location": "both",
+    "active_stage_start_end_inclusive": [
+      1,
+      24
+    ],
+    "mask_access": "offline only after durable seal and Service",
+    "rate": "floor(0.10*n)/n per role, same feature channel and direction across all 24 stages",
+    "not_field_prevalence": true
+  },
+  "common_underlying_raw_files": [
+    "data/center_46000.npz",
+    "data/center_46001.npz",
+    "data/center_46002.npz",
+    "data/center_46003.npz"
+  ],
+  "no_behavioral_or_service_result_used_to_choose_attack": true
+}

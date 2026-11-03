@@ -1,0 +1,225 @@
+--- frozen/d3_adapt.py
++++ D3f2/d3_adapt.py
+@@ -26,7 +26,7 @@
+   torch.nn.utils.clip_grad_norm_(model.parameters(),1.);opt.step()
+  return model,details
+ def make_candidate(parent,update,method,seed):
+- if update.role!='update' or method not in METHODS:raise PermissionError('Unregistered training source or generator')
++ if update.role!='update' or method!='U_MSE':raise PermissionError('Unregistered training source or generator')
+  before=state_hash(parent);xy=tensors(windows(update));w,raw=target_weights(update)
+  if method=='U_LABEL_WEIGHT':model,_=weighted_adapter(parent,xy,w,seed)
+  else:model=adapt(parent,xy,steps=50,seed=seed,loss='huber' if method=='U_HUBER' else 'mse')
+--- frozen/d3_audit.py
++++ D3f2/d3_audit.py
+@@ -5,11 +5,11 @@
+ from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PublicKey
+ from d2c_core import VerifiedFeedbackView,view_message
+ from d3_gate import Evidence,research_decision
+-from d3c_gate import decide_variant,VARIANTS,independent_expected
+-def audit_phase(phase,expected_rows,verify_service=True):
++VARIANTS=()
++def audit_phase(phase,expected_rows,verify_service=True,only_td=None):
+  records=[];checked=set();ncausal=0;decisions=0;inputs={};input_cache={};initial_states={}
+  gate=OriginalCMCGate(ROOT/'runtime',ROOT/'protocol/frozen_v2_final_commit_config.yaml')
+- for td in sorted((ROOT/'science'/phase).glob('*/*/*/*')):
++ for td in ([Path(only_td)] if only_td else sorted((ROOT/'science'/phase).glob('*/*/*/*'))):
+   if not td.is_dir():continue
+   ledger=AuditLedger(td/'journal.jsonl');ledger.verify();cas=CAS(td/'models');prior=None
+   done=read(td/'DONE.json');assert done['stages']==24 and done['result_sha256']==[sha(td/f'result_{j:03}.json') for j in range(1,25)] and done['journal_root']==ledger.verify(),'Complete lifecycle receipt mismatch'
+@@ -21,7 +21,11 @@
+    assert s['source_sha256']==SOURCE[str(s['seed'])]['sha256']
+    from d3_runner import arms
+    spec_arm=next(a for a in arms(phase) if a['id']==s['arm']) if phase!='ENGINEERING_TEST' else dict(method=s['method'],threshold=s['threshold'])
+-   assert s['method']==spec_arm['method'] and s['threshold']==spec_arm['threshold']
++   assert s['method']==spec_arm['method'] and s['threshold']==spec_arm['threshold'] and s['arm_spec']==spec_arm
++   if s['method']=='JOINT':
++    z=s['scores'];d=z['stage3']['recent_mean'];p=z['stage3']['mwu_p'];scale=max(z['parent_recent_verification_mean_loss'],1e-12)
++    expected=bool(d<0 and d+spec_arm['weight']*scale*(p-.2)<=-s['threshold'])
++    assert s['commit']==expected and s['reason']=='CURRENT_MEAN_MWU_SOFT_JOINT' and not s['feedback_view']['audits']
+    if t==1:
+     initial_key=s['center'],s['seed'];initial_hash=s['parent_entry']['state_hash']
+     if initial_key in initial_states:assert initial_states[initial_key]==initial_hash,'Initial-model fairness failed'
+@@ -93,6 +97,9 @@
+      input_cache[key]=cache
+     uu,vv,rb,hb=input_cache[key][t]
+     assert uu.hash==s['update_hash'] and vv.hash==s['verification_hash']
++    from d3_adapt import batch_hash
++    a=s['adapt_meta'];assert a['generator']=='U_MSE' and a['steps']==50 and a['lr']==.01 and a['batch']==64 and a['grad_clip']==1.
++    assert a['sampled_indices_sha256']==batch_hash(len(windows(uu)[0]),s['training_seed'])
+     recovered=score(cm,pm,rb,hb,vv,gate)
+     assert recovered==sc,'Full authenticated per-block/Stage3 score reconstruction mismatch'
+     del pm,cm
+@@ -100,13 +107,14 @@
+    assert r['harmful']==bool(r['commit'] and delta>0) and r['downside']==(max(delta,0.) if r['commit'] else 0.)
+    records.append(r);decisions+=1
+  assert len(records)==expected_rows,(len(records),expected_rows)
+- if phase!='ENGINEERING_TEST':
++ assert all(r['center'] in IDS[phase] and r['seed'] in read(ROOT/'RUN_MANIFEST.json')['seeds'][phase] and r['stream'] in STREAMS for r in records)
++ if phase!='ENGINEERING_TEST' and only_td is None:
+   from d3_runner import arms
+   import itertools
+-  expected=set(itertools.product(IDS[phase],[7311] if phase=='DevCal' else SEEDS,STREAMS,[a['id'] for a in arms(phase)],range(1,25)))
++  expected=set(itertools.product(IDS[phase],read(ROOT/'RUN_MANIFEST.json')['seeds'][phase],STREAMS,[a['id'] for a in arms(phase)],range(1,25)))
+   actual={(r['center'],r['seed'],r['stream'],r['arm'],r['stage']) for r in records}
+   assert actual==expected and len(actual)==len(records),'Scientific matrix identity/coverage mismatch'
+- audit=dict(status='VALIDATED',scope='D3c_'+phase,audit_pass=True,causality_pass=True,method_and_data_identity_pass=True,baseline_configurations_same_as_devcal_lock=True,science_lock_sha256=sha(ROOT/'EXPERIMENT_LOCK.json'),devcal_lock_sha256=sha(ROOT/'DEVCAL_SELECTED_LOCK.json') if phase in ('Confirm','ExpandedDev') else None,passed=True,phase=phase,rows=len(records),real_weight_files_verified=len(checked),past_feedback_chains_verified=ncausal,decision_causal_chains=decisions,post_seal_service_forwards_reverified=bool(verify_service),toy=phase=='ENGINEERING_TEST',expected_rows=expected_rows)
++ audit=dict(status='VALIDATED',scope='D3f2_'+phase,audit_pass=True,causality_pass=True,method_and_data_identity_pass=True,baseline_configurations_same_as_devcal_lock=True,science_lock_sha256=sha(ROOT/'EXPERIMENT_LOCK.json'),devcal_lock_sha256=sha(ROOT/'DEVCAL_SELECTED_LOCK.json') if phase in ('Confirm','ExpandedDev') else None,passed=True,phase=phase,rows=len(records),real_weight_files_verified=len(checked),past_feedback_chains_verified=ncausal,decision_causal_chains=decisions,post_seal_service_forwards_reverified=bool(verify_service),toy=phase=='ENGINEERING_TEST',expected_rows=expected_rows)
+  if phase in ('Confirm','ExpandedDev'):
+   sel=read(ROOT/'SELECTION_SEAL_RECEIPT.json');data=read(ROOT/f'data/{phase}_IDENTITY.json')
+   assert data['devcal_lock_sha256']==sel['selection_sha256']==sha(ROOT/'DEVCAL_SELECTED_LOCK.json')
+--- frozen/d3_common.py
++++ D3f2/d3_common.py
+@@ -56,7 +56,7 @@
+      resolved=Path(os.fsdecode(p)).resolve()
+      if any(resolved.is_relative_to(r) for r in roots) and not resolved.is_relative_to(ROOT):raise PermissionError('Frozen original mutation rejected: '+str(resolved))
+  sys.addaudithook(hook)
+-def execution_lock_path():return ROOT/'D3D1_EXECUTION.lock.json'
++def execution_lock_path():return ROOT/'D3F2_EXECUTION.lock.json'
+ def execution_lock_sha():return sha(execution_lock_path())
+ def authorization_receipt_path():return ROOT/'RUN_AUTHORIZATION_RECEIPT.json'
+ def allowed_execution_shas():return {execution_lock_sha()}
+--- frozen/d3_engine.py
++++ D3f2/d3_engine.py
+@@ -40,10 +40,10 @@
+  if manifest.exists():
+   for r in read(manifest)['rows']:assert sha(ROOT/r['path'])==r['sha256']
+   return
+- from d3_pipeline import verify_phase_permission
++ from f2_plan import verify_phase_permission
+  permission=verify_phase_permission(phase)
+  role=AuditLedger(ROOT/'process/DATA_ROLE_EVENTS.jsonl')
+- begin=role.append('INPUT_GENERATION_STARTED',('D3D1_ROLE_CONTROL','ALL','ALL'),1,dict(phase=phase,permission_sha256=permission,frozen_execution_sha256=execution_lock_sha()))
++ begin=role.append('INPUT_GENERATION_STARTED',('D3D1_ROLE_CONTROL','ALL','ALL'),1,dict(phase=phase,permission_sha256=permission,frozen_execution_sha256=execution_lock_sha(),selection_sha256=sha(ROOT/'DEVCAL_SELECTED_LOCK.json') if phase in ('Confirm','ExpandedDev') else None))
+  centers=IDS[phase];cfg=MainCfg();cfg.sim.seed=7311;cfg.sim.n_history=17000
+  for kind in 'ABC':getattr(cfg.sim,'type_'+kind).drift_prob=0.
+  raw=simulate_centers(cfg,len(centers),seed_offset=centers[0]*17,start_center_id=centers[0]);rows=[]
+@@ -59,7 +59,7 @@
+    dshift=np.concatenate([np.repeat(shift[0],delay),shift[:len(shift)-delay]]) if delay else shift
+    x[:,k]=(_sigmoid(_logit(source.X[:,k])+gain*dshift)*source.M[:,k]).astype('float32')
+   x=np.concatenate([x,source.M],1)
+-  meta=dict(center_id=center,regime_audit_only=regime,pool='D3d1_'+phase+'_SYNTHETIC_DEVELOPMENT',dt=source.dt,data_seed=7311,seed_offset=centers[0]*17,base_generator=source.metadata)
++  meta=dict(center_id=center,regime_audit_only=regime,pool='D3f2_'+phase+'_SYNTHETIC_DEVELOPMENT',dt=source.dt,data_seed=7311,seed_offset=centers[0]*17,base_generator=source.metadata)
+   if path.exists():
+    with np.load(path) as z:assert digest(z['x'],z['y'],z['ts'])==digest(x,y,source.timestamps),'Interrupted generation identity mismatch'
+   else:
+@@ -67,8 +67,8 @@
+    with tmp.open('xb') as f:np.savez_compressed(f,x=x,y=y,ts=source.timestamps,meta=json.dumps(meta));f.flush();os.fsync(f.fileno())
+    os.replace(tmp,path)
+   rows.append(dict(center=center,path=path.relative_to(ROOT).as_posix(),bytes=path.stat().st_size,sha256=sha(path),regime_audit_only=regime))
+- end=role.append('INPUT_GENERATION_COMPLETED',('D3D1_ROLE_CONTROL','ALL','ALL'),1,dict(phase=phase,begin_seq=begin['seq'],input_rows_sha256=hashlib.sha256(canonical(rows)).hexdigest()))
+- atomic(manifest,dict(phase=phase,rows=rows,generation_start_seq=begin['seq'],generation_end_seq=end['seq'],permission_sha256=permission,created_unix=time.time(),execution_lock_sha256=execution_lock_sha()),exclusive=True)
++ end=role.append('INPUT_GENERATION_COMPLETED',('D3D1_ROLE_CONTROL','ALL','ALL'),1,dict(phase=phase,begin_seq=begin['seq'],selection_sha256=sha(ROOT/'DEVCAL_SELECTED_LOCK.json') if phase in ('Confirm','ExpandedDev') else None,input_rows_sha256=hashlib.sha256(canonical(rows)).hexdigest()))
++ atomic(manifest,dict(phase=phase,rows=rows,generation_start_seq=begin['seq'],generation_end_seq=end['seq'],permission_sha256=permission,devcal_lock_sha256=sha(ROOT/'DEVCAL_SELECTED_LOCK.json') if phase in ('Confirm','ExpandedDev') else None,created_unix=time.time(),execution_lock_sha256=execution_lock_sha()),exclusive=True)
+ 
+ class CAS:
+  def __init__(self,path):self.root=Path(path);self.root.mkdir(parents=True,exist_ok=True)
+@@ -160,4 +160,4 @@
+  xy=Batch(torch.cat([p[0] for p in pairs]),torch.cat([p[1] for p in pairs]),'verification')
+  pl=predictions_losses(parent,xy)[1];cl=predictions_losses(candidate,xy)[1];ps,detail=score_arrays(pl,cl,[len(p[0]) for p in pairs],6)
+  scale=max(float(errors(parent,tensors(windows(ver)))[0].mean()),1e-12)
+- return dict(original_commit=anchor.commit,recent_score=anchor.recent_score,history_score=anchor.history_score,recent_median=anchor.recent_median,recent_mad=anchor.recent_mad,history_median=anchor.history_median,history_mad=anchor.history_mad,recent_blocks=rec[3].tolist(),history_blocks=hv.tolist(),old_score=robust(old),new_score=robust(new),old_median=float(np.median(old)) if len(old) else None,new_median=float(np.median(new)) if len(new) else None,scale=scale,stage3=ps,history_block_hashes=[b.hash for b in history[-12:]],recent_block_hashes=[b.hash for b in recent])
++ return dict(parent_recent_verification_mean_loss=float(pl[detail['recent_first_window']:].mean()),original_commit=anchor.commit,recent_score=anchor.recent_score,history_score=anchor.history_score,recent_median=anchor.recent_median,recent_mad=anchor.recent_mad,history_median=anchor.history_median,history_mad=anchor.history_mad,recent_blocks=rec[3].tolist(),history_blocks=hv.tolist(),old_score=robust(old),new_score=robust(new),old_median=float(np.median(old)) if len(old) else None,new_median=float(np.median(new)) if len(new) else None,scale=scale,stage3=ps,history_block_hashes=[b.hash for b in history[-12:]],recent_block_hashes=[b.hash for b in recent])
+--- frozen/d3_results.py
++++ D3f2/d3_results.py
+@@ -41,7 +41,7 @@
+  csvwrite(dest/'RESULTS_BY_CENTER.csv',bycenter);csvwrite(dest/'RESULTS_BY_STREAM.csv',bystream);csvwrite(dest/'RESULTS_BY_ARM.csv',byarm)
+  csvwrite(dest/'RESULTS_BY_REGIME.csv',byregime)
+  csvwrite(dest/'RESOURCE_COSTS.csv',[{k:r[k] for k in ('phase','center','seed','stream','arm','stage','maintenance_wall_seconds','training_seconds','late_score_seconds','post_seal_scientific_evaluation_seconds','gpu_peak_allocated_bytes')} for r in rows])
+- if phase in ('Confirm','ExpandedDev'):
++ if False:
+   effects=[];rng=np.random.default_rng(20261019)
+   for arm in arms:
+    vals={r['center']:r['balanced_clean_mixed_mse'] for r in bycenter if r['arm']==arm}
+--- frozen/d3_runner.py
++++ D3f2/d3_runner.py
+@@ -1,14 +1,2 @@
+-"""Arm identities only; every generator uses the unchanged fixed original/v0.2 gate."""
+-from d3_common import *
+-D=2.8018237766243602e-5
+-def arms(phase):
+- if phase=='RootScreen':return [dict(id='RAVM_ORIGINAL',method='RAVM_ORIGINAL',generator='U_MSE',gate_method='RAVM_ORIGINAL',threshold=D,fallback=False)]
+- manifest=read(ROOT/'RUN_MANIFEST.json')
+- base=[dict(id=m+'+V02',method=m+'+V02',generator=m,gate_method='RAVM_D2B_V02',threshold=D,fallback=False) for m in ('U_MSE','U_LABEL_WEIGHT','U_HUBER')]
+- base.append(dict(id='RAVM_ORIGINAL',method='RAVM_ORIGINAL',generator='U_MSE',gate_method='RAVM_ORIGINAL',threshold=D,fallback=False))
+- if phase=='DevCal':
+-  base.append(dict(id='GUARD_ONLY',method='GUARD_ONLY',generator='U_MSE',gate_method='RAVM_DELAYED_GUARD_ONLY',threshold=D,fallback=False))
+-  return base+[dict(id=f'{m}__g{i:02}',method=m,generator='U_MSE',gate_method=m,threshold=g*manifest['baseline_threshold_scale'],fallback=False) for m in ('DUAL_MEAN','RECENT_MEAN','MWU_MEAN') for i,g in enumerate(manifest['baseline_grid'])]
+- choices=manifest['pilot_baselines'] if phase=='Pilot' else read(ROOT/'DEVCAL_SELECTED_LOCK.json')['baseline_selection']
+- for m,v in choices.items():base.append(dict(id=m if phase=='Pilot' else m+'_SELECTED',method=m,generator='U_MSE',gate_method=m,threshold=v['threshold'] if not v['fallback'] else 0.,fallback=v['fallback']))
+- return base
++"""Compatibility import required by the authenticated lifecycle auditor."""
++from f2_plan import arms
+--- frozen/d3_trajectory.py
++++ D3f2/d3_trajectory.py
+@@ -61,7 +61,10 @@
+    audits=tuple(late_from_event(e,scope) for e in ledger.entries if e['kind']=='LATE_PAIR_SCORED' and e['stage']<t)[-6:]
+    view=verifier.snapshot(scope,t,audits=audits,current_history_complete=len(scores['history_blocks'])==12)
+    reason='FIXED_ORIGINAL_OR_BASELINE';fallback=False
+-   if arm.get('fallback',False):commit=False;reason='DEV_CAL_NO_QUALIFIED_CONFIGURATION_RETAIN_ALL'
++   if arm['method']=='JOINT':
++    from f2_gate import joint_gate
++    commit,joint_score=joint_gate(scores['stage3']['recent_mean'],scores['parent_recent_verification_mean_loss'],scores['stage3']['mwu_p'],arm['weight'],arm['threshold']);reason='CURRENT_MEAN_MWU_SOFT_JOINT'
++   elif arm.get('fallback',False):commit=False;reason='DEV_CAL_NO_QUALIFIED_CONFIGURATION_RETAIN_ALL'
+    elif arm['method'] in VARIANTS:
+     outcome=decide_variant(Evidence(tuple(scores['recent_blocks']),tuple(scores['history_blocks']),scores['scale']),view,lambda:gate.evaluate(candidate,parent,recent,history).commit,verifier.view_public_key,scope,t,arm['method'],arm['threshold'],scores['stage3']['mwu_p'])
+     commit=outcome.action;reason=outcome.reason;fallback=outcome.fallback
+@@ -76,7 +79,7 @@
+    if phase=='RootScreen':
+     from d3_screen import before_seal
+     matched_set=before_seal(td,ledger,cas,parent,candidate,u,center,seed,stream,t,scope)
+-   sealed=dict(generator=arm.get('generator','U_MSE'),gate_method=gate_method,adapt_meta=adapt_meta,matched_set=matched_set,schema='D3_DURABLE_PRE_SERVICE_DECISION',scope=list(scope),phase=phase,center=center,seed=seed,stream=stream,stage=t,arm=arm['id'],method=arm['method'],threshold=arm['threshold'],commit=bool(commit),reason=reason,fallback=fallback,snapshot_seq=snap['seq'],gate_start_seq=view.gate_start_seq,feedback_view=asdict(view),feedback_view_public_key=verifier.view_public_key.public_bytes(serialization.Encoding.Raw,serialization.PublicFormat.Raw).hex(),label_authority_public_key=authority.public_hex,parent_entry=pe,candidate_entry=ce,scores=scores,update_hash=u.hash,verification_hash=v.hash,raw_sha256=sha(ROOT/f'data/center_{center}.npz'),source_sha256=SOURCE[str(seed)]['sha256'],execution_lock_sha256=execution_lock_sha(),training_steps=50,training_seed=seed+center+t*100,training_seconds=train_sec,maintenance_pre_service_seconds=pre)
++   sealed=dict(arm_spec=arm,generator=arm.get('generator','U_MSE'),gate_method=gate_method,adapt_meta=adapt_meta,matched_set=matched_set,schema='D3_DURABLE_PRE_SERVICE_DECISION',scope=list(scope),phase=phase,center=center,seed=seed,stream=stream,stage=t,arm=arm['id'],method=arm['method'],threshold=arm['threshold'],commit=bool(commit),reason=reason,fallback=fallback,snapshot_seq=snap['seq'],gate_start_seq=view.gate_start_seq,feedback_view=asdict(view),feedback_view_public_key=verifier.view_public_key.public_bytes(serialization.Encoding.Raw,serialization.PublicFormat.Raw).hex(),label_authority_public_key=authority.public_hex,parent_entry=pe,candidate_entry=ce,scores=scores,update_hash=u.hash,verification_hash=v.hash,raw_sha256=sha(ROOT/f'data/center_{center}.npz'),source_sha256=SOURCE[str(seed)]['sha256'],execution_lock_sha256=execution_lock_sha(),training_steps=50,training_seed=seed+center+t*100,training_seconds=train_sec,maintenance_pre_service_seconds=pre)
+    identity=atomic(sp,sealed,exclusive=True)
+    se=ledger.append('DECISION_SEALED',scope,t,dict(snapshot_seq=snap['seq'],decision=bool(commit),decision_sha256=identity))
+   # Include actual pre-Service persistence cost; never use outcome timing as a proxy.
+@@ -96,6 +99,8 @@
+    assert late_record.delta_late==cl-pl,'Late scoring must agree with independent same-state post-seal evaluator'
+   deployed=sealed['candidate_entry'] if commit else sealed['parent_entry'];delta=cl-pl;harm=bool(commit and delta>0)
+   row=dict(phase='D3d1_'+phase if phase!='ENGINEERING_TEST' else phase,center=center,seed=seed,stream=stream,regime_audit_only=REGIMES[IDS[phase].index(center)%4],arm=arm['id'],method=arm['method'],stage=t,commit=bool(commit),original_gate_on_own_state=scores['original_commit'],reason=sealed['reason'],fallback=sealed['fallback'],parent_entry=sealed['parent_entry'],candidate_entry=sealed['candidate_entry'],deployed_entry=deployed,decision_sha256=sha(sp),service_hash=service.hash,parent_service_mse=pl,candidate_service_mse=cl,deployed_service_mse=cl if commit else pl,delta_deployed=delta if commit else 0.,harmful=harm,downside=max(delta,0.) if commit else 0.,beneficial_commit=bool(commit and delta<0),candidate_beneficial_audit_only=delta<0,maintenance_wall_seconds=pre_service_cost+late_cost,pre_service_including_seal_seconds=pre_service_cost,late_score_seconds=late_cost,post_seal_scientific_evaluation_seconds=eval_sec,training_seconds=sealed['training_seconds'],late_audit_seq=late_record.score_event_seq if late_record else None,maturity_seq=mat['seq'],label_authority_public_key=authority.public_hex,feedback_used_count=len(sealed['feedback_view']['audits']),feedback_active=not sealed['fallback'] if gate_method in ('RAVM_D2B_V02','RAVM_DELAYED_GUARD_ONLY',*VARIANTS) else False,gpu_peak_allocated_bytes=torch.cuda.max_memory_allocated() if DEVICE=='cuda' else None,scope='NEW_SYNTHETIC_DEVELOPMENT_ONLY')
++  row['phase']=phase
++  row['scope']='D3F2_SYNTHETIC_DEVELOPMENT_NOT_FINAL'
+   row['calibration_fallback']=bool(arm.get('fallback',False))
+   if phase=='RootScreen':
+    from d3_screen import after_service
+--- frozen/dynamic_worker_resources_v2.py
++++ D3f2/dynamic_worker_resources_v2.py
+@@ -33,6 +33,7 @@
+     def __init__(self,start=2,clock=time.monotonic):
+         self.clock=clock;self.target=start;self.started=clock();self.done=0
+         self.previous=None;self.performance_limit=None;self.history=[];self.physical_max=1
++        self.retry_after=0.;self.retry_failures=0
+     def allowed(self,active,completed,s=None):
+         s=snapshot() if s is None else s
+         self.physical_max=physical_limit(s);funded=memory_capacity(s,active)
+@@ -41,15 +42,27 @@
+             self.target=funded;self.previous=None;self.started=now;self.done=completed;reason='MEMORY_DRAIN'
+         elif self.target==0 and funded>0:
+             self.target=1;self.started=now;self.done=completed;reason='MEMORY_RECOVERED'
++        if self.performance_limit is not None and now>=self.retry_after:
++            self.performance_limit=None;self.started=now;self.done=completed
++            reason='RETRY_BASELINE_MEASUREMENT'
+         elapsed=now-self.started;finished=completed-self.done
+         if self.target>0 and elapsed>=30 and finished>=6:
+             rate=finished/elapsed
+             self.history.append(dict(workers=self.target,completed=finished,seconds=elapsed,trajectories_per_second=rate))
+             if self.previous and rate<self.previous[1]*.95:
+-                self.target=self.previous[0];self.performance_limit=self.target;self.previous=None;reason='THROUGHPUT_REGRESSION_DRAIN'
+-            elif funded>self.target and (self.performance_limit is None or self.target<self.performance_limit):
+-                self.previous=(self.target,rate);self.target+=1;reason='PROBE_NEXT_RESOURCE_FUNDED_WORKER'
++                self.target=self.previous[0];self.performance_limit=self.target;self.previous=None
++                self.retry_failures+=1
++                self.retry_after=now+min(1800,300*2**min(self.retry_failures-1,3))
++                reason='THROUGHPUT_REGRESSION_DRAIN'
++            else:
++                if self.previous:
++                    self.previous=None;self.performance_limit=None;self.retry_failures=0;self.retry_after=0.
++                if funded>self.target and self.performance_limit is None:
++                    self.previous=(self.target,rate);self.target+=1;reason='PROBE_NEXT_RESOURCE_FUNDED_WORKER'
++                elif self.performance_limit is not None:
++                    reason='THROUGHPUT_COOLDOWN'
+             self.started=now;self.done=completed
+         return min(self.target,funded),dict(**s,resource_capacity=funded,physical_resource_ceiling=self.physical_max,
+             policy_target=self.target,throughput_limit=self.performance_limit,policy_reason=reason,
+-            throughput_history=self.history[-12:],ram_reserve_bytes=RAM_RESERVE,vram_reserve_bytes=VRAM_RESERVE)
++            throughput_history=self.history[-12:],ram_reserve_bytes=RAM_RESERVE,vram_reserve_bytes=VRAM_RESERVE,
++            retry_cooldown_remaining_seconds=max(0.,self.retry_after-now),retry_failures=self.retry_failures)

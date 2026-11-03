@@ -15,10 +15,10 @@ scripts generate Figures 3–8 from saved inputs; Figures 1 and 2 are artwork.
 This is a **partial release**. Inputs, configurations and source and initial
 checkpoints are supplied for Main, E1, E2, E4 and E5 in both versions; see
 [subset scope](SYNTHETIC_RELEASE_SCOPE.md) and [data attribution and licences](DATA_THIRDPARTY_ATTRIBUTION.md).
-The new manifest covers these groups only. Original data archives, Alibaba E3
-historical assets and complete development-calibration dependencies are not
-all included. No full clean
-environment or source-to-final execution has been validated for this release.
+The new manifest covers these groups only. Development-calibration files and
+historical references are also provided; see [their scope](DEVCAL_RELEASE_SCOPE.md).
+Original data archives and Alibaba E3 historical assets are not included. No
+full clean environment or source-to-final execution has been validated for this release.
 The alternative-machine E3 candidate has not been validated end to end.
 
 The historical g04 matrix has 17,118 completed trajectories with scientific

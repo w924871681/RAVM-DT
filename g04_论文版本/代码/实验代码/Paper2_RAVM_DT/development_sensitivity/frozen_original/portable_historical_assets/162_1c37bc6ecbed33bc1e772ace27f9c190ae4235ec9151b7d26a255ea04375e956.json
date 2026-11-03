@@ -1,0 +1,109 @@
+{
+  "centers": {
+    "DevCal": [
+      56600,
+      56601,
+      56602,
+      56603,
+      56604,
+      56605,
+      56606,
+      56607
+    ],
+    "Confirm": [
+      56700,
+      56701,
+      56702,
+      56703,
+      56704,
+      56705,
+      56706,
+      56707
+    ],
+    "ExpandedDev": [
+      56800,
+      56801,
+      56802,
+      56803,
+      56804,
+      56805,
+      56806,
+      56807,
+      56808,
+      56809,
+      56810,
+      56811
+    ]
+  },
+  "model_seeds": [
+    7311,
+    7312,
+    7313
+  ],
+  "streams": [
+    "clean",
+    "mixed",
+    "coherent_sticky"
+  ],
+  "stages": 24,
+  "max_trajectories": 2940,
+  "max_stage_rows": 70560,
+  "regimes_per_phase": {
+    "DevCal": {
+      "56600": "stationary",
+      "56601": "gradual",
+      "56602": "abrupt",
+      "56603": "recurring",
+      "56604": "stationary",
+      "56605": "gradual",
+      "56606": "abrupt",
+      "56607": "recurring"
+    },
+    "Confirm": {
+      "56700": "stationary",
+      "56701": "gradual",
+      "56702": "abrupt",
+      "56703": "recurring",
+      "56704": "stationary",
+      "56705": "gradual",
+      "56706": "abrupt",
+      "56707": "recurring"
+    },
+    "ExpandedDev": {
+      "56800": "stationary",
+      "56801": "gradual",
+      "56802": "abrupt",
+      "56803": "recurring",
+      "56804": "stationary",
+      "56805": "gradual",
+      "56806": "abrupt",
+      "56807": "recurring",
+      "56808": "stationary",
+      "56809": "gradual",
+      "56810": "abrupt",
+      "56811": "recurring"
+    }
+  },
+  "data_generator": "authenticated B1 simulation and regime transformation, copied with D3 development role metadata; phase data seed=7311; seed_offset=first_center*17",
+  "scientific_protocol_sha256": "7643fd2af5b809dc6ed5cdfc4bd0af5b72c656feb95b3c4d819f9461c4759679",
+  "source_training": false,
+  "new_final_authorized": false,
+  "status": "PRE_DATA_FIXED",
+  "source_assets": {
+    "7311": {
+      "path": "checkpoints/source_GRU_H1_7311.pt",
+      "sha256": "f73b2cad3da6f0ad52933f3b28178398be69826b6d3ca72bf8f00c9634aa3910",
+      "state_hash": "2d980d706dce71f1e5f51edf96b8615f097e8a1477d86909b36467c4dcfa50b5"
+    },
+    "7312": {
+      "path": "checkpoints/source_GRU_H1_7312.pt",
+      "sha256": "612ad31a48730be1d39cfb8ad2bd4d1dda30737aa5684b406b4b5f7ae523e95f",
+      "state_hash": "be0ec0e752bd9823ad9fc082608e8d8ddee4de11e1b538f5dbb6cbc52cb29c8f"
+    },
+    "7313": {
+      "path": "checkpoints/source_GRU_H1_7313.pt",
+      "sha256": "1931de4da79554dde9a398c02d34025670a4086c8d384a9afd496dbe0de0413b",
+      "state_hash": "14b8101beadbbaa8af0bfab36d7590f0134c67330821005206167a9e077dfcf7"
+    }
+  }
+}

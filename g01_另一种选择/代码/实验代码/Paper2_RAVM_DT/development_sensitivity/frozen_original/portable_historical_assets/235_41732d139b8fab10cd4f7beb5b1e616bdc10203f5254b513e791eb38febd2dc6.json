@@ -1,0 +1,69 @@
+{
+  "created_utc": "2026-10-16T15:45:36.946410+00:00",
+  "role": "NEW_B1_DEVELOPMENT_ONLY_NOT_FINAL",
+  "generator": "code/b1_data.py:generate_new_development_inputs",
+  "generator_sha256": "5f4ddb81aa76a2f3535030ce1047f0e3f1429d4dc44aa5e87f00855609fb46a7",
+  "vendor_main_cfg_sha256": "fea128a2649301017a2a8ad6cab3db30392e180c2f3aa1216e9a83fefcd5d005",
+  "vendor_sim_sha256": "930fa8ebe34a442d53af16a054955580f2d0c41ef2514a3cfd125b0e6905883d",
+  "source_checkpoint_sha256": "f73b2cad3da6f0ad52933f3b28178398be69826b6d3ca72bf8f00c9634aa3910",
+  "seed": 7311,
+  "seed_offset": 782000,
+  "center_regimes_audit_only": {
+    "46000": "stationary",
+    "46001": "gradual",
+    "46002": "abrupt",
+    "46003": "recurring"
+  },
+  "stages": 24,
+  "rows": [
+    {
+      "center_id": 46000,
+      "regime_audit_only": "stationary",
+      "relative_path": "data/center_46000.npz",
+      "bytes": 630659,
+      "sha256": "8e4b760ba13eaf725a00841701e6cf8a207431a196381c5e9ba0e3aa2a5a77c9",
+      "raw_array_digest": "7d9dbc70acba0f92de75706e564dc1a5d3607f7c23d982ac2784b32f36f95c32",
+      "n_samples": 17000,
+      "features": 24,
+      "first_ts": 8,
+      "last_ts": 34006
+    },
+    {
+      "center_id": 46001,
+      "regime_audit_only": "gradual",
+      "relative_path": "data/center_46001.npz",
+      "bytes": 631834,
+      "sha256": "6bb33854ce14df2afc3dc12a59fbf46e387709b5cdff62779e371b1dca6d6e69",
+      "raw_array_digest": "1e9f4b63887962a1767fabd70f5a7880d5b68f8eee8b2be11b94137b13c5e635",
+      "n_samples": 17000,
+      "features": 24,
+      "first_ts": 8,
+      "last_ts": 17007
+    },
+    {
+      "center_id": 46002,
+      "regime_audit_only": "abrupt",
+      "relative_path": "data/center_46002.npz",
+      "bytes": 424248,
+      "sha256": "4a33e788812297829bfdb33acc8ba23ef075f56bb93b162c9b388f5c34c234f2",
+      "raw_array_digest": "68867a4d9131fd8d92c7982324364461fc31bde1e4d4753c5b9d947e683dbe2b",
+      "n_samples": 17000,
+      "features": 24,
+      "first_ts": 8,
+      "last_ts": 34006
+    },
+    {
+      "center_id": 46003,
+      "regime_audit_only": "recurring",
+      "relative_path": "data/center_46003.npz",
+      "bytes": 769389,
+      "sha256": "f09428af90e5cf8ceb438628d4a346859661a115b1289da1e29095b14e1172f6",
+      "raw_array_digest": "6f3854b649fceeb721c4a3d49fe6c37994ca23b35394352705f8dacee7ab0632",
+      "n_samples": 17000,
+      "features": 24,
+      "first_ts": 8,
+      "last_ts": 17007
+    }
+  ],
+  "no_new_service_loss_evaluated": true
+}

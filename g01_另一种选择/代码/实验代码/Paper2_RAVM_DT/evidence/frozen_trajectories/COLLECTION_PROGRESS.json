@@ -1,0 +1,155 @@
+[
+  {
+    "group": "E1",
+    "file": "evidence/frozen_trajectories/E1.jsonl.gz",
+    "sha256": "819b70f35270113fb69b1d7ef926c33a7b3dab8d3b06362217ca4720a392fe8e",
+    "bytes": 50924176,
+    "original_result_bytes": 356673767,
+    "trajectories": 5184,
+    "stages": 124416
+  },
+  {
+    "group": "E2_GRU_H1",
+    "file": "evidence/frozen_trajectories/E2_GRU_H1.jsonl.gz",
+    "sha256": "ca88f6196f04a5d2a30dd70300e32fc7b2fd092b4603f63f4020ce2fbb6e22d9",
+    "bytes": 7837202,
+    "original_result_bytes": 52736032,
+    "trajectories": 864,
+    "stages": 20736
+  },
+  {
+    "group": "E2_GRU_H4",
+    "file": "evidence/frozen_trajectories/E2_GRU_H4.jsonl.gz",
+    "sha256": "aa57685a7b3393aa9b083468787f0320544caf9b7ebbec95f633d7a89e1bcbf7",
+    "bytes": 7862689,
+    "original_result_bytes": 52742505,
+    "trajectories": 864,
+    "stages": 20736
+  },
+  {
+    "group": "E2_MLP_H1",
+    "file": "evidence/frozen_trajectories/E2_MLP_H1.jsonl.gz",
+    "sha256": "fa08db95908f89764c49b3fbdcd5096e9226860846acfe438d4f87ceadd1bdcd",
+    "bytes": 7826112,
+    "original_result_bytes": 52663077,
+    "trajectories": 864,
+    "stages": 20736
+  },
+  {
+    "group": "E2_MLP_H4",
+    "file": "evidence/frozen_trajectories/E2_MLP_H4.jsonl.gz",
+    "sha256": "cf495aeed58fe4f42ff7b6d4713c24226646e5a79158969edd68e73922ae6df2",
+    "bytes": 7857982,
+    "original_result_bytes": 52805660,
+    "trajectories": 864,
+    "stages": 20736
+  },
+  {
+    "group": "E2_TCN_H1",
+    "file": "evidence/frozen_trajectories/E2_TCN_H1.jsonl.gz",
+    "sha256": "9553f47682ddb4e2e1cb3d349681ecd9ecd578382df41fbae490ae7f9aadc445",
+    "bytes": 7829095,
+    "original_result_bytes": 52714007,
+    "trajectories": 864,
+    "stages": 20736
+  },
+  {
+    "group": "E2_TCN_H4",
+    "file": "evidence/frozen_trajectories/E2_TCN_H4.jsonl.gz",
+    "sha256": "6d9f0fb6a7d3b588c3d0c6a83c9dc0d24f833cddfbe9ea7810230eb817850baa",
+    "bytes": 7842130,
+    "original_result_bytes": 52719062,
+    "trajectories": 864,
+    "stages": 20736
+  },
+  {
+    "group": "E3",
+    "file": "evidence/frozen_trajectories/E3.jsonl.gz",
+    "sha256": "329c3036b9584994bfc824f50e69efee999074d47b388067de76b78ca224d4a5",
+    "bytes": 30350704,
+    "original_result_bytes": 213113340,
+    "trajectories": 2880,
+    "stages": 69120
+  },
+  {
+    "group": "E4_thermbuild_BSE1",
+    "file": "evidence/frozen_trajectories/E4_thermbuild_BSE1.jsonl.gz",
+    "sha256": "2044801987a30b5ed363a8e54fa0bb1deed01732a759270daf2489579c211158",
+    "bytes": 975830,
+    "original_result_bytes": 6945085,
+    "trajectories": 63,
+    "stages": 2520
+  },
+  {
+    "group": "E4_thermbuild_BSE2",
+    "file": "evidence/frozen_trajectories/E4_thermbuild_BSE2.jsonl.gz",
+    "sha256": "6421414e9d5b424f23899f5c02d19671ac8ae05fc7dc0e04bd6b50e5cd65d72e",
+    "bytes": 928578,
+    "original_result_bytes": 6597006,
+    "trajectories": 63,
+    "stages": 2394
+  },
+  {
+    "group": "E4_uci_T1",
+    "file": "evidence/frozen_trajectories/E4_uci_T1.jsonl.gz",
+    "sha256": "9553333148453b2973a71f77c77a357af35a265a339e1dc06739c3bb0c9244f9",
+    "bytes": 793098,
+    "original_result_bytes": 5501622,
+    "trajectories": 84,
+    "stages": 2016
+  },
+  {
+    "group": "E4_uci_T2",
+    "file": "evidence/frozen_trajectories/E4_uci_T2.jsonl.gz",
+    "sha256": "f452cc02cb5d12feb7a4fbf85359d5acdba41c6bbc133bab0df2c0bc5cac611c",
+    "bytes": 793157,
+    "original_result_bytes": 5498706,
+    "trajectories": 84,
+    "stages": 2016
+  },
+  {
+    "group": "E4_uci_T3",
+    "file": "evidence/frozen_trajectories/E4_uci_T3.jsonl.gz",
+    "sha256": "b7aa2d329e4621bd3b11b5544a21d368acce79cef9953f4d6a8d83911afc813e",
+    "bytes": 795663,
+    "original_result_bytes": 5499878,
+    "trajectories": 84,
+    "stages": 2016
+  },
+  {
+    "group": "E5_COST_R1",
+    "file": "evidence/frozen_trajectories/E5_COST_R1.jsonl.gz",
+    "sha256": "6eabef63e917b00328611f568967f6e62edde1f7fbed13f4cab82c1db363c07c",
+    "bytes": 119293,
+    "original_result_bytes": 894338,
+    "trajectories": 12,
+    "stages": 288
+  },
+  {
+    "group": "E5_COST_R2",
+    "file": "evidence/frozen_trajectories/E5_COST_R2.jsonl.gz",
+    "sha256": "88e89fb26d67ab58e2a1b9a0c858e7380463b5ad8705f5bbd1c86eed4eb8b6e9",
+    "bytes": 119335,
+    "original_result_bytes": 894367,
+    "trajectories": 12,
+    "stages": 288
+  },
+  {
+    "group": "E5_COST_R3",
+    "file": "evidence/frozen_trajectories/E5_COST_R3.jsonl.gz",
+    "sha256": "c46ccfcd4dcee1aa3f36536c5b99a1b9c6a37dd99626eb7239eacd77c554c653",
+    "bytes": 119380,
+    "original_result_bytes": 894363,
+    "trajectories": 12,
+    "stages": 288
+  },
+  {
+    "group": "Main",
+    "file": "evidence/frozen_trajectories/Main.jsonl.gz",
+    "sha256": "df605175ed1a20f812871115af9cf7d368a3dc20e0e6f2dd1c4106eff2657ca6",
+    "bytes": 35867308,
+    "original_result_bytes": 220163916,
+    "trajectories": 3456,
+    "stages": 82944
+  }
+]

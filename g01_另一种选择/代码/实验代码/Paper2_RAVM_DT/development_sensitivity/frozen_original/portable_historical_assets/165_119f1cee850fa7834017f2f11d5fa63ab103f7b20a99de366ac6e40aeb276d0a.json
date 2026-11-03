@@ -1,0 +1,106 @@
+{
+  "protocol_id": "RAVM_D3D1_ROOT_CAUSE_CANDIDATE_QUALITY_20261020",
+  "paper": "RAVM-DT/CMC (second paper)",
+  "status": "prospective_development_only_not_new_final",
+  "hypothesis": "coherent contamination of matured Update labels degrades generated candidates; a legal bounded-influence update can reduce harmful candidates without destroying clean/benign adaptation",
+  "candidate_generators": {
+    "baseline": "U_MSE: 50 SGD steps, LR=0.01, batch=64 with replacement, grad clip=1, MSE",
+    "strong_simple_control": "U_HUBER: same update budget and sampled minibatches, Huber delta=0.1",
+    "one_candidate": "U_LABEL_WEIGHT: same update budget and sampled minibatches, raw-Update-target local discrepancy weighted MSE",
+    "weighted_parameters": {"half_window":5,"median_mad_additive_scale":0.01,"score_transition":3.0,"min_weight":0.2,"max_weight":1.0,"raw_target_index_offset_L":96,"horizon":1},
+    "no_optimization_grid":true,
+    "no_more_candidate_algorithms":true
+  },
+  "integrity_and_roles": {
+    "training_source_only":"current matured Update; no Verification, Service, attack mask, audit regime labels, or future samples",
+    "service_before_seal_forbidden":true,
+    "oracle_cleanup_only_offline":true,
+    "current_verification_remains_original_observed":true,
+    "old_final_frozen":true,
+    "old_D3c_dev_confirm_not_reused_for_scientific_go":true,
+    "reproducible_matched_parent_states":true,
+    "all_new_ids_allocated_and_frozen_from_registry_before_data_generation":true,
+    "excluded_id_ranges":"all existing source, development, calibration, holdout, D1-D3c and reserved centers including 47000-47015"
+  },
+  "root_screen": {
+    "centers":8,
+    "regimes":["stationary","gradual","abrupt","recurring"],
+    "centers_per_regime":2,
+    "seeds":[7311],
+    "streams":["clean","mixed","coherent_sticky"],
+    "selected_stages":[2,3,4,5,9,10,19,20],
+    "matched_parent_stage_cases":192,
+    "local_candidate_adaptations":576,
+    "extra_oracle_only_for_attribution":"coherent_sticky stage 3/4 on those 8 centers; no online use",
+    "go_if_any_robust_arm":{
+      "corrupted_stream_equal_weight_service_mse_relative_max":0.99,
+      "clean_stream_service_mse_relative_max":1.01,
+      "corrupted_stream_sum_positive_delta_relative_max":1.0,
+      "scientific_status":"resource-allocation screen only; report center-level uncertainty and negatives"
+    },
+    "candidate_tie_break":["lower_corrupted_service_mse","lower_clean_service_mse","lower_compute_cost","arm_id"],
+    "otherwise":"STOP_ROOT_SCREEN"
+  },
+  "pilot":{
+    "centers":4,"seeds":[7311],"streams":["clean","mixed","coherent_sticky"],"stages":24,
+    "arms":["U_MSE+V02","U_LABEL_WEIGHT+V02","U_HUBER+V02","RAVM_ORIGINAL","DUAL_MEAN","RECENT_MEAN","MWU_MEAN"],
+    "full_trajectories":84,"stage_rows":2016,
+    "go_if_selected_arm":{
+      "each_stream_harm_max":0.05,
+      "each_stream_downside_max":5.6036475532487204e-05,
+      "balanced_mse_vs_U_MSE_V02_max_ratio":0.997,
+      "clean_trajectory_mse_vs_U_MSE_V02_max_ratio":1.01,
+      "no_safety_or_causal_audit_failures":true
+    },
+    "otherwise":"STOP_PILOT"
+  },
+  "devcal":{
+    "centers":8,"seeds":[7311],"streams":["clean","mixed","coherent_sticky"],"stages":24,
+    "baseline_grid_methods":["DUAL_MEAN","RECENT_MEAN","MWU_MEAN"],
+    "baseline_grid_count_each":16,
+    "fixed_controls":["U_MSE+V02","U_LABEL_WEIGHT+V02","U_HUBER+V02","RAVM_ORIGINAL","GUARD_ONLY"],
+    "expected_arms":53,"full_trajectories":1272,"stage_rows":30528,
+    "go_if_selected_arm":{
+      "each_stream_harm_max":0.05,
+      "coherent_dev_selection_buffer_harm_max":0.045,
+      "each_stream_downside_max":5.6036475532487204e-05,
+      "balanced_mse_vs_U_MSE_V02_max_ratio":0.997,
+      "balanced_mse_vs_best_active_qualified_strong_max_ratio":1.005,
+      "independent_audit":"VALIDATED"
+    },
+    "otherwise":"STOP_DEV_CAL"
+  },
+  "confirm":{
+    "centers":8,"seeds":[7311,7312,7313],"streams":["clean","mixed","coherent_sticky"],"stages":24,
+    "arms":["U_MSE+V02","U_LABEL_WEIGHT+V02","U_HUBER+V02","RAVM_ORIGINAL","DUAL_MEAN_SELECTED","RECENT_MEAN_SELECTED","MWU_MEAN_SELECTED"],
+    "full_trajectories":504,"stage_rows":12096,
+    "go_if_selected_arm":{
+      "each_stream_harm_max":0.05,
+      "each_stream_downside_max":5.6036475532487204e-05,
+      "balanced_mse_vs_best_active_qualified_strong_max_ratio":0.998,
+      "balanced_mse_strictly_below_U_MSE_V02":true,
+      "center_win_count_min_of_8":4,
+      "runtime_ratio_max_vs_RAVM_ORIGINAL":2.5,
+      "independent_audit":"VALIDATED"
+    },
+    "otherwise":"STOP_CONFIRM"
+  },
+  "expanded_dev":{
+    "centers":12,"seeds":[7311,7312,7313],"streams":["clean","mixed","coherent_sticky"],"stages":24,
+    "arms":["U_MSE+V02","U_LABEL_WEIGHT+V02","U_HUBER+V02","RAVM_ORIGINAL","DUAL_MEAN_SELECTED","RECENT_MEAN_SELECTED","MWU_MEAN_SELECTED"],
+    "full_trajectories":756,"stage_rows":18144,
+    "after":"STOP_AFTER_EXPANDED; no auto Final"
+  },
+  "auto_upper_bound_excluding_screen_reference":{
+    "complete_lifecycle_trajectories":2616,
+    "stage_rows":62784
+  },
+  "monitor":{"interval_seconds":900,"local_runner_no_codex_continuous_supervision":true,"eta_based_on_measured_throughput_only":true},
+  "stopping_disposition":{
+    "candidate_improves_but_gate_risk_fails":"CANDIDATE_IMPROVED_VERIFICATION_BLOCKER; do not add gates",
+    "Huber_wins_and_weighting_fails":"report strong baseline improvement, no originality claim",
+    "both_candidates_fail":"STOP_UPDATE_LABEL_HYPOTHESIS; investigate Verification only if justified by independent data",
+    "no_valid_center_registry_or_weights":"STOP_PRECHECK",
+    "never_modify_frozen_papers_P2_PADV_old_final":true
+  }
+}

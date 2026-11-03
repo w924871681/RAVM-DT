@@ -1,0 +1,8 @@
+{
+  "DevCal": "only selection pool",
+  "Confirm": "generate only after exclusive selected lock and causal journal receipt",
+  "ExpandedDev": "generate only after Confirm GO",
+  "online_gate": "current verification and signed older matured scalar feedback only",
+  "feedback_source": "SIMULATED_CAUSAL_LABEL_PROVIDER_ONLY_NOT_FIELD",
+  "old_confirm": "diagnostic only; no feature or threshold fitting"
+}

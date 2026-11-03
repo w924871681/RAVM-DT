@@ -1,0 +1,111 @@
+{
+  "centers": {
+    "DevCal": [
+      56300,
+      56301,
+      56302,
+      56303,
+      56304,
+      56305,
+      56306,
+      56307
+    ],
+    "Confirm": [
+      56400,
+      56401,
+      56402,
+      56403,
+      56404,
+      56405,
+      56406,
+      56407
+    ],
+    "ExpandedDev": [
+      56500,
+      56501,
+      56502,
+      56503,
+      56504,
+      56505,
+      56506,
+      56507,
+      56508,
+      56509,
+      56510,
+      56511
+    ]
+  },
+  "model_seeds": [
+    7311,
+    7312,
+    7313
+  ],
+  "regime_assignment": "ordered center index modulo four: stationary, gradual, abrupt, recurring",
+  "streams": [
+    "clean",
+    "mixed",
+    "coherent_sticky"
+  ],
+  "stages": 24,
+  "max_trajectories": 2700,
+  "max_stage_rows": 64800,
+  "regimes_per_phase": {
+    "DevCal": {
+      "56300": "stationary",
+      "56301": "gradual",
+      "56302": "abrupt",
+      "56303": "recurring",
+      "56304": "stationary",
+      "56305": "gradual",
+      "56306": "abrupt",
+      "56307": "recurring"
+    },
+    "Confirm": {
+      "56400": "stationary",
+      "56401": "gradual",
+      "56402": "abrupt",
+      "56403": "recurring",
+      "56404": "stationary",
+      "56405": "gradual",
+      "56406": "abrupt",
+      "56407": "recurring"
+    },
+    "ExpandedDev": {
+      "56500": "stationary",
+      "56501": "gradual",
+      "56502": "abrupt",
+      "56503": "recurring",
+      "56504": "stationary",
+      "56505": "gradual",
+      "56506": "abrupt",
+      "56507": "recurring",
+      "56508": "stationary",
+      "56509": "gradual",
+      "56510": "abrupt",
+      "56511": "recurring"
+    }
+  },
+  "source_assets": {
+    "7311": {
+      "path": "checkpoints/source_GRU_H1_7311.pt",
+      "sha256": "f73b2cad3da6f0ad52933f3b28178398be69826b6d3ca72bf8f00c9634aa3910",
+      "state_hash": "2d980d706dce71f1e5f51edf96b8615f097e8a1477d86909b36467c4dcfa50b5"
+    },
+    "7312": {
+      "path": "checkpoints/source_GRU_H1_7312.pt",
+      "sha256": "612ad31a48730be1d39cfb8ad2bd4d1dda30737aa5684b406b4b5f7ae523e95f",
+      "state_hash": "be0ec0e752bd9823ad9fc082608e8d8ddee4de11e1b538f5dbb6cbc52cb29c8f"
+    },
+    "7313": {
+      "path": "checkpoints/source_GRU_H1_7313.pt",
+      "sha256": "1931de4da79554dde9a398c02d34025670a4086c8d384a9afd496dbe0de0413b",
+      "state_hash": "14b8101beadbbaa8af0bfab36d7590f0134c67330821005206167a9e077dfcf7"
+    }
+  },
+  "data_generator": "authenticated B1 simulation and regime transformation, copied with D3 development role metadata; phase data seed=7311; seed_offset=first_center*17",
+  "source_training": false,
+  "new_final_authorized": false,
+  "old_archive_sha256": "65052e6f9e708cca8a891a470758d00290a10b81b8e7f98b57831c53824fe793",
+  "scientific_protocol_sha256": "242e3e7029831b217d5800cf4527cd5b8f6c3bd8c668909d8d33022d354bf5fc",
+  "status": "PRE_DATA_FIXED"
+}

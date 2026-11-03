@@ -1,0 +1,138 @@
+{
+  "centers": {
+    "RootScreen": [
+      56900,
+      56901,
+      56902,
+      56903,
+      56904,
+      56905,
+      56906,
+      56907
+    ],
+    "Pilot": [
+      57000,
+      57001,
+      57002,
+      57003
+    ],
+    "DevCal": [
+      57100,
+      57101,
+      57102,
+      57103,
+      57104,
+      57105,
+      57106,
+      57107
+    ],
+    "Confirm": [
+      57200,
+      57201,
+      57202,
+      57203,
+      57204,
+      57205,
+      57206,
+      57207
+    ],
+    "ExpandedDev": [
+      57300,
+      57301,
+      57302,
+      57303,
+      57304,
+      57305,
+      57306,
+      57307,
+      57308,
+      57309,
+      57310,
+      57311
+    ]
+  },
+  "seeds": [
+    7311,
+    7312,
+    7313
+  ],
+  "streams": [
+    "clean",
+    "mixed",
+    "coherent_sticky"
+  ],
+  "regimes": [
+    "stationary",
+    "gradual",
+    "abrupt",
+    "recurring"
+  ],
+  "regime_assignment": "ordered index modulo four",
+  "data_generator": "authenticated B1 simulation and regime transformation, copied with D3 development role metadata; phase data seed=7311; seed_offset=first_center*17",
+  "source_assets": {
+    "7311": {
+      "path": "checkpoints/source_GRU_H1_7311.pt",
+      "sha256": "f73b2cad3da6f0ad52933f3b28178398be69826b6d3ca72bf8f00c9634aa3910",
+      "state_hash": "2d980d706dce71f1e5f51edf96b8615f097e8a1477d86909b36467c4dcfa50b5"
+    },
+    "7312": {
+      "path": "checkpoints/source_GRU_H1_7312.pt",
+      "sha256": "612ad31a48730be1d39cfb8ad2bd4d1dda30737aa5684b406b4b5f7ae523e95f",
+      "state_hash": "be0ec0e752bd9823ad9fc082608e8d8ddee4de11e1b538f5dbb6cbc52cb29c8f"
+    },
+    "7313": {
+      "path": "checkpoints/source_GRU_H1_7313.pt",
+      "sha256": "1931de4da79554dde9a398c02d34025670a4086c8d384a9afd496dbe0de0413b",
+      "state_hash": "14b8101beadbbaa8af0bfab36d7590f0134c67330821005206167a9e077dfcf7"
+    }
+  },
+  "root_candidate_adaptations": 576,
+  "root_reference_trajectories": 24,
+  "root_reference_stages": 576,
+  "oracle_adaptations_max": 48,
+  "lifecycle_trajectory_cap": 2616,
+  "lifecycle_stage_row_cap": 62784,
+  "prior_archive_sha256": "50ac365e12b6002163a3766bd3662f3afa4f50ea837133b4510062c2b58cb10a",
+  "scientific_protocol_sha256": "119f1cee850fa7834017f2f11d5fa63ab103f7b20a99de366ac6e40aeb276d0a",
+  "baseline_grid": [
+    0.0,
+    0.001,
+    0.002,
+    0.003,
+    0.005,
+    0.0075,
+    0.01,
+    0.015,
+    0.02,
+    0.03,
+    0.04,
+    0.05,
+    0.075,
+    0.1,
+    0.15,
+    0.2
+  ],
+  "baseline_threshold_scale": 0.00560364755324872,
+  "pilot_baselines": {
+    "DUAL_MEAN": {
+      "fallback": false,
+      "selected_grid_arm": "DUAL_MEAN__g14",
+      "threshold": 0.000840547132987308,
+      "devcal_balanced_mse": 0.0034273571451043003
+    },
+    "RECENT_MEAN": {
+      "fallback": false,
+      "selected_grid_arm": "RECENT_MEAN__g14",
+      "threshold": 0.000840547132987308,
+      "devcal_balanced_mse": 0.003339957410844363
+    },
+    "MWU_MEAN": {
+      "fallback": false,
+      "selected_grid_arm": "MWU_MEAN__g01",
+      "threshold": 5.60364755324872e-06,
+      "devcal_balanced_mse": 0.003331996402494042
+    }
+  },
+  "pilot_baseline_source": "Frozen prior DevCal choices, reference only; new DevCal independently recalibrates all 16 settings",
+  "status": "PRE_DATA_FIXED"
+}

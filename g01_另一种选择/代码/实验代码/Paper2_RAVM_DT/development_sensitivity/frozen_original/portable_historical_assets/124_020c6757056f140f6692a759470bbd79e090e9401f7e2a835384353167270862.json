@@ -1,0 +1,52 @@
+{
+  "independent": false,
+  "optimizer_base": {
+    "batch": "min(64,n), replacement sampling",
+    "gradient_clip": 1.0,
+    "learning_rate": 0.01,
+    "loss": "MSE",
+    "optimizer": "SGD",
+    "steps": 50
+  },
+  "policies": [
+    {
+      "fallback": false,
+      "id": "toy_RAVM",
+      "learning_rate": 0.01,
+      "method": "RAVM",
+      "retention_scale": 0.02,
+      "retention_threshold": 0.0001,
+      "scale": 0.0,
+      "threshold": 0.0
+    },
+    {
+      "fallback": false,
+      "id": "toy_Mean",
+      "learning_rate": 0.01,
+      "method": "RecentMean",
+      "retention_scale": 0.0,
+      "retention_threshold": 0.0,
+      "scale": 0.0,
+      "threshold": 0.0
+    },
+    {
+      "fallback": false,
+      "id": "toy_Frozen",
+      "learning_rate": 0.01,
+      "method": "Frozen",
+      "retention_scale": 0.0,
+      "retention_threshold": 0.0,
+      "scale": 0.0,
+      "threshold": 0.0
+    }
+  ],
+  "run_key": "CPU_ONLY_logging_regression",
+  "score_version": "audited-gate_graph-arithmetic-v1-krec0-khist0.5-bounded12",
+  "stages": 2,
+  "task_identity": {
+    "center_id": -1,
+    "model_seed": 7311,
+    "stream": "CPU_SOFTWARE_TOY",
+    "task_type": "workload"
+  }
+}

@@ -1,0 +1,203 @@
+{
+  "independent": true,
+  "optimizer_base": {
+    "batch": "min(64,n), replacement sampling",
+    "gradient_clip": 1.0,
+    "learning_rate": 0.01,
+    "loss": "MSE",
+    "optimizer": "SGD",
+    "steps": 50
+  },
+  "policies": [
+    {
+      "fallback": false,
+      "id": "fixture_RecentMean_0.0",
+      "learning_rate": 0.01,
+      "method": "RecentMean",
+      "retention_scale": 0.0,
+      "retention_threshold": 0.0,
+      "scale": 0.0,
+      "threshold": 0.0
+    },
+    {
+      "fallback": false,
+      "id": "fixture_RecentMean_0.05",
+      "learning_rate": 0.01,
+      "method": "RecentMean",
+      "retention_scale": 0.0,
+      "retention_threshold": 0.0,
+      "scale": 0.05,
+      "threshold": 0.000280182377662436
+    },
+    {
+      "fallback": false,
+      "id": "fixture_RecentMedian_0.0",
+      "learning_rate": 0.01,
+      "method": "RecentMedian",
+      "retention_scale": 0.0,
+      "retention_threshold": 0.0,
+      "scale": 0.0,
+      "threshold": 0.0
+    },
+    {
+      "fallback": false,
+      "id": "fixture_RecentMedian_0.05",
+      "learning_rate": 0.01,
+      "method": "RecentMedian",
+      "retention_scale": 0.0,
+      "retention_threshold": 0.0,
+      "scale": 0.05,
+      "threshold": 0.000280182377662436
+    },
+    {
+      "fallback": false,
+      "id": "fixture_DualMean_0.0",
+      "learning_rate": 0.01,
+      "method": "DualMean",
+      "retention_scale": 0.0,
+      "retention_threshold": 0.0,
+      "scale": 0.0,
+      "threshold": 0.0
+    },
+    {
+      "fallback": false,
+      "id": "fixture_DualMean_0.05",
+      "learning_rate": 0.01,
+      "method": "DualMean",
+      "retention_scale": 0.0,
+      "retention_threshold": 0.0,
+      "scale": 0.05,
+      "threshold": 0.000280182377662436
+    },
+    {
+      "fallback": false,
+      "id": "fixture_RAVM_0.0",
+      "learning_rate": 0.01,
+      "method": "RAVM",
+      "retention_scale": 0.0,
+      "retention_threshold": 0.0,
+      "scale": 0.0,
+      "threshold": 0.0
+    },
+    {
+      "fallback": false,
+      "id": "fixture_RAVM_0.05",
+      "learning_rate": 0.01,
+      "method": "RAVM",
+      "retention_scale": 0.0,
+      "retention_threshold": 0.0,
+      "scale": 0.05,
+      "threshold": 0.000280182377662436
+    },
+    {
+      "fallback": false,
+      "id": "fixture_CumulativeMean_0.0",
+      "learning_rate": 0.01,
+      "method": "CumulativeMean",
+      "retention_scale": 0.0,
+      "retention_threshold": 0.0,
+      "scale": 0.0,
+      "threshold": 0.0
+    },
+    {
+      "fallback": false,
+      "id": "fixture_CumulativeMean_0.05",
+      "learning_rate": 0.01,
+      "method": "CumulativeMean",
+      "retention_scale": 0.0,
+      "retention_threshold": 0.0,
+      "scale": 0.05,
+      "threshold": 0.000280182377662436
+    },
+    {
+      "fallback": false,
+      "id": "fixture_MWUMean_0.0",
+      "learning_rate": 0.01,
+      "method": "MWUMean",
+      "retention_scale": 0.0,
+      "retention_threshold": 0.0,
+      "scale": 0.0,
+      "threshold": 0.0
+    },
+    {
+      "fallback": false,
+      "id": "fixture_MWUMean_0.05",
+      "learning_rate": 0.01,
+      "method": "MWUMean",
+      "retention_scale": 0.0,
+      "retention_threshold": 0.0,
+      "scale": 0.05,
+      "threshold": 0.000280182377662436
+    },
+    {
+      "fallback": false,
+      "id": "fixture_RAVM_b0.02",
+      "learning_rate": 0.01,
+      "method": "RAVM",
+      "retention_scale": 0.02,
+      "retention_threshold": 0.00011207295106497441,
+      "scale": 0.0,
+      "threshold": 0.0
+    },
+    {
+      "fallback": false,
+      "id": "fixture_RAVM_b0.1",
+      "learning_rate": 0.01,
+      "method": "RAVM",
+      "retention_scale": 0.1,
+      "retention_threshold": 0.000560364755324872,
+      "scale": 0.0,
+      "threshold": 0.0
+    },
+    {
+      "fallback": false,
+      "id": "fixture_DualMean_b0.02",
+      "learning_rate": 0.01,
+      "method": "DualMean",
+      "retention_scale": 0.02,
+      "retention_threshold": 0.00011207295106497441,
+      "scale": 0.0,
+      "threshold": 0.0
+    },
+    {
+      "fallback": false,
+      "id": "fixture_DualMean_b0.1",
+      "learning_rate": 0.01,
+      "method": "DualMean",
+      "retention_scale": 0.1,
+      "retention_threshold": 0.000560364755324872,
+      "scale": 0.0,
+      "threshold": 0.0
+    },
+    {
+      "fallback": false,
+      "id": "RAVM_LEGACY_FIXED",
+      "learning_rate": 0.01,
+      "method": "RAVM",
+      "retention_scale": 0.0,
+      "retention_threshold": 0.0,
+      "scale": 0.0,
+      "threshold": 0.0
+    },
+    {
+      "fallback": false,
+      "id": "DualMean_LEGACY_FIXED",
+      "learning_rate": 0.01,
+      "method": "DualMean",
+      "retention_scale": 0.0,
+      "retention_threshold": 0.0,
+      "scale": 0.029999999999989008,
+      "threshold": 0.0001681094265974
+    }
+  ],
+  "run_key": "fixture_41000_7311_mixed_independent",
+  "score_version": "audited-gate_graph-arithmetic-v1-krec0-khist0.5-bounded12",
+  "stages": 4,
+  "task_identity": {
+    "center_id": 41000,
+    "input_file_sha256": "6c294b0a21ed01e7a965e8bf7a7a3fdf57ec97290268214f8720d2e4a220b986",
+    "model_seed": 7311,
+    "stream": "mixed",
+    "task_type": "workload"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "status": "PASS_FROZEN_REFERENCE_COLLECTION",
+  "trajectories": 1584,
+  "stages": 38016,
+  "files": [
+    {
+      "file": "GO_STOP.json",
+      "sha256": "a9d588cb044b43f3a8cd212df3a4a4a0490ed9e73b7e2c5227cb3960e8054eff",
+      "bytes": 487
+    },
+    {
+      "file": "INDEPENDENT_AUDIT.json",
+      "sha256": "0346e32c0d1f59f8a4becfa48caecfd9bd56474b2105a3cc314fe01281c9a3f7",
+      "bytes": 1200163
+    },
+    {
+      "file": "PAIRED_CENTER_EFFECTS.csv",
+      "sha256": "bb41cf9a821680b9ea0776c60a9ca9dcd35b846a0a3822ed792188ba67c55618",
+      "bytes": 12929
+    },
+    {
+      "file": "RESOURCE_COSTS.csv",
+      "sha256": "4d40ccdfefca7da2deb6e198e16b46f23a9619e075b95e4e3c040e2b61d6ed84",
+      "bytes": 4520401
+    },
+    {
+      "file": "RESULTS_BY_ARM.csv",
+      "sha256": "b4aa8e4b703e3fff1b59deb7600d2fbd0ad9bef1db02368929ed16199c2df0b3",
+      "bytes": 21123
+    },
+    {
+      "file": "RESULTS_BY_CENTER.csv",
+      "sha256": "4868a5bd26a58e309fe578d7907ef65bd7bc65b9cf0896e067553aa476a89bff",
+      "bytes": 106697
+    },
+    {
+      "file": "RESULTS_BY_CENTER_AND_STREAM.csv",
+      "sha256": "27287b436221ebaf233c4e15f11d1cf692a5f8588f9715431df877639043fb84",
+      "bytes": 249392
+    },
+    {
+      "file": "RESULTS_BY_REGIME.csv",
+      "sha256": "340649084584af7a99d68dc869b8b5814e851d8c8d927f261ef6d1340493117c",
+      "bytes": 51509
+    },
+    {
+      "file": "RESULTS_BY_REGIME_AUDIT_ONLY_AND_STREAM.csv",
+      "sha256": "778a1dcfff5427b44dd695fe5a684a81aef0e6b5cb2b764fc179373d925d89e4",
+      "bytes": 129899
+    },
+    {
+      "file": "RESULTS_BY_STREAM.csv",
+      "sha256": "e81faf6fae3ac7ecec18e05fc60b3aec2b7c749d094fdba449357291d8dfaeab",
+      "bytes": 34835
+    },
+    {
+      "file": "SELECTION_EVIDENCE.json",
+      "sha256": "eb3ff207b5290305c95f0fc28910455e3685d49ed0ee6da3d0e04c122855600c",
+      "bytes": 3740
+    },
+    {
+      "file": "STAGE_RECORDS.csv",
+      "sha256": "3feabcca71a7f13bcc9dde461077935c483622040b877a46c8b9bac5c6c17cdd",
+      "bytes": 35574752
+    },
+    {
+      "file": "trajectories.jsonl",
+      "sha256": "00b0c4bb9974aa17566df6cb0d54f38e540551b38a625a875b6123576ebc6d4b",
+      "bytes": 70694345,
+      "previous_gzip_sha256": "4a14f29b5da625ac929f1e7a252c53c0cd151d29909d0656bfc1344af3ef4ac5"
+    }
+  ],
+  "source_training_verified": false
+}

@@ -1,0 +1,7 @@
+﻿gate_a,gate_b,matched_parent_candidate_verification,different,a_only_commit,b_only_commit,scope
+JOINT__l3__m0_on_joint_same_state,DUAL_MEAN__g12_on_joint_same_state,6912,971,731,240,decision behavior only; not component effect or significance
+JOINT__l3__m0_on_joint_same_state,MWU_MEAN__g04_on_joint_same_state,6912,699,696,3,decision behavior only; not component effect or significance
+JOINT__l3__m0_on_joint_same_state,RECENT_MEAN__g12_on_joint_same_state,6912,758,411,347,decision behavior only; not component effect or significance
+DUAL_MEAN__g12_on_joint_same_state,MWU_MEAN__g04_on_joint_same_state,6912,830,516,314,decision behavior only; not component effect or significance
+DUAL_MEAN__g12_on_joint_same_state,RECENT_MEAN__g12_on_joint_same_state,6912,427,0,427,decision behavior only; not component effect or significance
+MWU_MEAN__g04_on_joint_same_state,RECENT_MEAN__g12_on_joint_same_state,6912,879,125,754,decision behavior only; not component effect or significance

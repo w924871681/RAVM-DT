@@ -1,0 +1,18 @@
+{
+  "primary": "Center-equal clean/mixed lifecycle MSE; equally average all seeds and 24 stages inside each center/stream.",
+  "risk": "Per stream harmful committed stages / all stage opportunities, downside mean over all opportunities, with all centers equally weighted by complete balanced matrix.",
+  "devcal_buffer_all_calibrated_methods": 0.045,
+  "active": "At least one clean/mixed deployed commit across full calibrated population.",
+  "selection": "Among qualified active candidates min balanced MSE, then lower actual matched maintenance cost, smaller lambda, larger margin, final lexicographic ID.",
+  "baseline_no_eligible_active": "Choose min MSE qualified inactive grid arm if any, otherwise min MSE grid arm marked unqualified and descriptive only. Such arms can never be the best qualified active comparator.",
+  "bootstrap": {
+    "unit": "center including all seeds/streams/stages",
+    "draws": 4000,
+    "seed": 20261020
+  },
+  "no_margin_or_lambda_expansion": true,
+  "no_confirm_selection": true,
+  "cost": "Matched actual per-stage maintenance path including training, verification, model snapshot/cache, seal, and existing v0.2 past feedback where applicable. Postseal Service and independent audit separate.",
+  "large_CAS": "Over 256MiB summed stage CAS may be external only with path+size+SHA256 index; never delete local weights.",
+  "engineering_SGD_budget": 0
+}

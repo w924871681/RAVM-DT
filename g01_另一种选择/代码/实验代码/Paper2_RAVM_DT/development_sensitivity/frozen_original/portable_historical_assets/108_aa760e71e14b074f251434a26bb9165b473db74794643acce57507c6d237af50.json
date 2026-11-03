@@ -1,0 +1,24 @@
+{
+  "R2": "PENDING_SEPARATE_AUTHORIZATION",
+  "R3": "PENDING_SEPARATE_AUTHORIZATION",
+  "authorization_sha256": "afa6d1f130f5c832a3311626a03f0b4288cc9745d997ebf2dc0fe76b74202482",
+  "candidate_id": "P7_7_ORIGINAL_BATCH20_CANDIDATE_V1",
+  "complete": false,
+  "definition_digest": "1e2863758cd5303c7d64457c012ce49d4aef4339781a01bf5869ab41e67f32e5",
+  "dependency_digest": "baae715885d93ef2a04584f81333989867a137fbf14369403f2529a94fe337cb",
+  "error": "ContractError: input materialization process F1 failed: 2",
+  "file_bindings": {
+    "authorization_manifest.json": "4308d7f5a9723259d7ae33e25aea8f8ff5d1451ad8dd6d828fa3eea8dcbee871",
+    "bank_feasibility_inventory.json": "a209a7dd37b06990002167eba71e1100f9a201a63b7e3ce19b8912b454c90298",
+    "definition_manifest.json": "1e603e9d9890d77fb3bcaedd852ca1efc2070944f620ff37425521ab9bf6d73c",
+    "failure.json": "bcb56bc17dcb5c32a8f07b78e960b987f987744a0d63b53d01c89ea1f5859067",
+    "source_environment_manifest.json": "1e82fe640e73aa330dff891c74a65140777b5fa40601bca48982f7802a380a30"
+  },
+  "finished": "2026-10-08T16:44:57.239377+00:00",
+  "frozen_files_unchanged": true,
+  "initial_state_verified": false,
+  "run_id": "CIV_INPUT_V1_AUTHORIZED_20261009_RUN002",
+  "schema": "paper3-civ-run-manifest-v1",
+  "started": "2026-10-08T16:43:50.792289+00:00",
+  "verification_id": "P7_7_CANONICAL_INPUT_VERIFICATION_V1"
+}

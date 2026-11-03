@@ -1,0 +1,14 @@
+{
+  "audit": "VALIDATED",
+  "bytes": 88477103,
+  "clean_extraction_pass": true,
+  "crc_pass": true,
+  "finished_unix": 1792500270.3546758,
+  "information_decision": "INFO_GO",
+  "member_set_pass": true,
+  "member_sha256_pass": true,
+  "members": 11625,
+  "sha256": "1172ac3e07cbe8f9de89e56507a03da83287e60c3d1f9a310430b9c1aab50581",
+  "status": "PASS",
+  "zip_path": "historical_location_e3dbb7f768081b3bbd40f09559879dd3f03dddc2d0e50bf96934c0da5004a9ca"
+}

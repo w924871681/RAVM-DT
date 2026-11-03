@@ -1,0 +1,3 @@
+# Development-calibration materials
+
+Both version folders contain the development-calibration frozen code, synthetic inputs, source and initial weights, saved trajectories, tables and historical records. The reported 1,584 trajectories and table comparisons were obtained previously; this publication only copies existing material and checks its recorded file identities. The historical g04 choice uses the original measured timing component. A later measurement selected g01 among tied development errors; its new timing was not replaced by historical timing. These are distinct runs and do not imply timing will select the same choice on another machine. An end-to-end run of this public repository in a clean environment has not been established.

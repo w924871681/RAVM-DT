@@ -1,0 +1,194 @@
+{
+  "protocol_id": "RAVM_D3F2_CAUSAL_SOFT_MWU_RECENT_JOINT_GATING_20261020",
+  "status": "DESIGN_READY_NOT_YET_EXECUTED",
+  "paper": "RAVM-DT/CMC (second paper)",
+  "scientific_question": "Does a pre-registered soft integration of MWU and recent mean improve risk-qualified 24-stage Service MSE beyond independently calibrated active strong baselines?",
+  "source_evidence": {
+    "D3f1_information_status": "INFO_GO_NOT_ALGORITHM_GO",
+    "D3f1_new_centers": "59000..59031 EXCLUDED from all new candidate selection and confirm pools",
+    "D3f1_mwu_delta_concordance": 0.095095,
+    "D3f1_mwu_center_bootstrap_ci": [
+      0.03411241319444444,
+      0.15824652777777778
+    ],
+    "D3f1_coherent_sticky_uncertain": true,
+    "D3f1_false_rejection_warning": "Among 470 shadow accepted, p<0.2 would reject 103 beneficial and 65 harmful candidates."
+  },
+  "strict_roles": {
+    "source_training": "frozen, do not rerun",
+    "target_M0": "once per center+model_seed; shared across streams and arms; 50 warmup updates when not already legally present",
+    "candidate": "native frozen U_MSE, SGD/MSE 50 steps, lr=0.01, batch64 with replacement, grad_clip=1, identical seed and sampling across arms until trajectories diverge",
+    "verification": "native Stage3 paired candidate/parent window losses; mean difference + scipy mannwhitneyu(candidate_loss,parent_loss,alternative=less,method=asymptotic); never use Service",
+    "service": "open only after stage-level action seal; offline calibration/metrics after stage completion",
+    "excluded_inputs": [
+      "audit_only harms",
+      "real pollution masks",
+      "regime truth",
+      "stream attack category as decision feature",
+      "future current Service",
+      "old observed Final"
+    ],
+    "causal_audit": "independent process validates event seals, identity, all numerical gate inputs, state inheritance, source hashes, and all 24 stages before issuing VALIDATED"
+  },
+  "joint_mechanism": {
+    "predecision_inputs": [
+      "recent_mean_diff",
+      "parent_recent_verification_mean_loss",
+      "mwu_one_sided_p"
+    ],
+    "pivot_p": 0.2,
+    "scale": "max(parent_recent_verification_mean_loss,1e-12)",
+    "joint_score": "recent_mean_diff + weight * scale * (mwu_p-0.2)",
+    "action": "(recent_mean_diff < 0) and (joint_score <= -margin)",
+    "lambda_grid": [
+      0.0,
+      0.05,
+      0.15,
+      0.3
+    ],
+    "margin_fraction_grid": [
+      0.01,
+      0.05,
+      0.1,
+      0.2
+    ],
+    "margin_scale": 0.00560364755324872,
+    "calibration_arms": 16,
+    "selection_rule": "among DEV-qualified lambda>0 options (each-stream risk max, coherent buffer, downside), choose min balanced Service MSE, deterministic tie-break by lower cost, smaller weight, larger margin; lambda=0 is no-increment baseline and cannot claim GO",
+    "no_other_features": true,
+    "no_algorithm_mutation_after_new_results": true
+  },
+  "baseline_comparators": {
+    "active_strong": [
+      "RECENT_MEAN",
+      "MWU_MEAN",
+      "DUAL_MEAN"
+    ],
+    "each_baseline_margin_fraction_grid": [
+      0,
+      0.001,
+      0.002,
+      0.003,
+      0.005,
+      0.0075,
+      0.01,
+      0.015,
+      0.02,
+      0.03,
+      0.04,
+      0.05,
+      0.075,
+      0.1,
+      0.15,
+      0.2
+    ],
+    "historical_reference_only": [
+      "RAVM_ORIGINAL",
+      "RAVM_D2B_V02"
+    ],
+    "never_passive_or_frozen_as_best_active": true,
+    "selection_pool_only": "DevCal"
+  },
+  "metrics": {
+    "primary": "mean of clean/mixed lifecycle Service MSE with equal weights per center",
+    "risk_each_stream_harm_max": 0.05,
+    "risk_each_stream_downside_max": 5.6036475532487204e-05,
+    "devcal_coherent_harm_selection_buffer_max": 0.045,
+    "confidence_interval": "paired center-cluster bootstrap 4000 draws, original paired center as unit; report not claim guarantees",
+    "all_streams_and_regimes": "report fully",
+    "cost": "end-to-end maintenance runtime+model cache+forward cost; matched measurement scope for baselines"
+  },
+  "proposed_phases": {
+    "preflight": "asset identity and global center-registry checks; no source changes; pure math test; stage replay and gate score parity",
+    "P0": {
+      "new_centers": 4,
+      "model_seeds": [
+        7311
+      ],
+      "streams": 3,
+      "stages": 24,
+      "arms": 6,
+      "joint_weight": 0.15,
+      "joint_margin_fraction": 0.1,
+      "expected_trajectories": 72,
+      "expected_stage_rows": 1728,
+      "role": "software and behavioral smoke only; not model selection",
+      "go": "audit VALIDATED, at least one action differs vs RecentMean under the fixed P0 settings, all required trajectories complete, each-stream empirical harm<=0.15, candidate balanced MSE<=1.20*P0 RecentMean; smoke resource gate only, not scientific success"
+    },
+    "DevCal": {
+      "new_centers": 8,
+      "model_seeds": [
+        7311
+      ],
+      "streams": 3,
+      "stages": 24,
+      "arms": 66,
+      "expected_trajectories": 1584,
+      "expected_stage_rows": 38016,
+      "go": "audit VALIDATED, at least one lambda>0 candidate meets all DevCal risk qualifications, is active, improves balanced MSE at least 0.3% versus BEST DevCal risk-qualified ACTIVE strong comparator; else STOP_DEV_CAL; if no active risk-qualified strong comparator then STOP_DEV_CAL (no superiority claim)"
+    },
+    "Confirm": {
+      "new_centers": 8,
+      "model_seeds": [
+        7311,
+        7312,
+        7313
+      ],
+      "streams": 3,
+      "stages": 24,
+      "arms": 6,
+      "expected_trajectories": 432,
+      "expected_stage_rows": 10368,
+      "go": "locked candidate risk qualified per stream at 5%, all downside thresholds, balanced MSE at least 0.2% lower than the PRELOCKED best DevCal-qualified active strong comparator, >=4/8 center wins, measured maintenance cost<=2.5 times comparator, audit VALIDATED; else STOP_CONFIRM"
+    },
+    "ExpandedDev": {
+      "new_centers": 12,
+      "model_seeds": [
+        7311,
+        7312,
+        7313
+      ],
+      "streams": 3,
+      "stages": 24,
+      "arms": 6,
+      "expected_trajectories": 648,
+      "expected_stage_rows": 15552,
+      "after": "STOP; report negative and positive results; no auto Final or paper edits"
+    }
+  },
+  "totals_if_all_phases_run": {
+    "trajectories": 2736,
+    "stage_rows": 65664,
+    "candidate_optimizer_steps_max": 3283200,
+    "M0_total_center_seed_pairs_new_if_all_phases": 72,
+    "M0_warmup_optimizer_steps_max": 3600,
+    "total_target_optimizer_steps_max": 3286800,
+    "counts_assume_no extra duplicate M0 per stream/method": "true"
+  },
+  "p0_arm_details": [
+    "JOINT_LAMBDA_0.15_MARGIN_FRACTION_0.1",
+    "RECENT_MEAN_G13",
+    "MWU_MEAN_G13",
+    "DUAL_MEAN_G13",
+    "RAVM_ORIGINAL",
+    "RAVM_D2B_V02"
+  ],
+  "confirm_and_expanded_arms": [
+    "JOINT_SELECTED",
+    "RECENT_MEAN_SELECTED",
+    "MWU_MEAN_SELECTED",
+    "DUAL_MEAN_SELECTED",
+    "RAVM_ORIGINAL",
+    "RAVM_D2B_V02"
+  ],
+  "new_centers": "All phase-specific center IDs must be allocated from full global registry and frozen before any data generation; NO collision or automatic substitution; no reuse of D3f1, D1-D3d, Final or reserved 47000-47015",
+  "automated_progress": "Local Python process writes progress every 15 min: completed/total trajectories and stages, actual SGD, elapsed, ETA based on observed throughput only, current phase, memory/GPU, exceptions, audit status; Codex need not poll",
+  "stage_exit": "Any phase with NO-GO stops without retuning, resampling center IDs, or retrying scientific runs; benign resumable engineering exceptions only when exact idempotent receipts checked",
+  "not_claimed": [
+    "D3f1 information GO proves algorithm works",
+    "MWU p is a calibrated probability",
+    "risk <=5% empirical is a guarantee",
+    "development Pilot is independent final",
+    "soft combination is automatically original research"
+  ]
+}

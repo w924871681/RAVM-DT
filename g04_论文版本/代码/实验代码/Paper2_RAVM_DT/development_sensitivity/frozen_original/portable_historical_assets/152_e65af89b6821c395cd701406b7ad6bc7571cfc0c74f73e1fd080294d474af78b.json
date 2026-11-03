@@ -1,0 +1,8 @@
+{
+  "DevCal": "only role allowed for selection; 8 fresh centers, 1 seed",
+  "Confirm": "created after exclusive selection lock; 8 independent centers,3 seeds; no tuning",
+  "ExpandedDev": "only after fixed Confirm GO,12 new centers,3 seeds; no tuning",
+  "old_P0": "diagnostic and scorer regression only; never selection",
+  "online_gate": "signed past scalar audits and current Verification only; no Service capability",
+  "feedback": "simulated maturity, not field attestation"
+}
