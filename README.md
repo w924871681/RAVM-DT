@@ -37,6 +37,8 @@ end to end on the official dataset.
 
 See [recorded environments and installation](ENVIRONMENT_GUIDE.md) before running.
 
+For exact provider files and their recorded hashes, see [data acquisition](DATA_ACQUISITION_GUIDE.md).
+
 ## Raw data access
 
 Raw datasets are obtained separately from their respective providers and are
